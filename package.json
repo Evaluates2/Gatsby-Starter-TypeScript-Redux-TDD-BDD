@@ -21,6 +21,8 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "cypress": "^3.8.0",
+    "cypress-cucumber-preprocessor": "^1.19.0",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -42,5 +44,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "env": {
+    "cypress/globals": true
   }
 }
