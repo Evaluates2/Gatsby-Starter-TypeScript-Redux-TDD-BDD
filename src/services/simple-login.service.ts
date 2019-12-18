@@ -1,24 +1,28 @@
 
-interface ISomeApiParams {
+interface ILoginParams {
     name?: string;
+    password?: string;
 }
 
-interface ISomeApiSuccessResponse {
+export interface ILoginSuccess {
     data: any;
 }
 
-interface ISomeApiErrorResponse {
+export interface ILoginError {
     error: any;
 }
 
-const callApiService = (params: ISomeApiParams = {}) : Promise<ISomeApiSuccessResponse | ISomeApiErrorResponse> => {
+const loginService = (params: ILoginParams = {}): Promise<ILoginSuccess | ILoginError> => {
 
-    return new Promise ((resolve, reject) => {
+    return new Promise((resolve, reject) => {
 
-        resolve({data: 'foo'})
+        resolve({
+            data: {
+                id: Math.floor(Math.random() * 10000),
+            },
+        });
 
-    })
-}
+    });
+};
 
-
-export default callApiService
+export default loginService;

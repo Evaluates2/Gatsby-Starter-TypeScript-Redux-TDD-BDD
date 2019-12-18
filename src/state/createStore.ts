@@ -1,27 +1,35 @@
-import { applyMiddleware, createStore } from 'redux';
+
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { load, save } from 'redux-localstorage-simple';
-// import websocketMiddleware from './middlewares/websocket';
+// import { load, save } from 'redux-localstorage-simple';
+import customMiddleware from './middlewares/customMiddleware';
 import combinedReducers from './reducers/root-reducer';
 
-function reducer() {
-  //...
-}
+import { createStore, applyMiddleware, compose } from 'redux';
+import todosCustomMiddleware from './middlewares/todosCustomMiddleware';
+import loginCustomMiddleware from './middlewares/loginCustomMiddleware';
 
-// preloadedState will be passed in by the plugin
-// export default preloadedState => {
-//   return createStore(reducer, preloadedState, );
-// };
-  
-
-const configureStore = () => {
+// preloadedState will be passed in by the gatsby plugin
+export default preloadedState => {
   return createStore(
     combinedReducers,
-    load({ states: ['authenticatedUserReducer'], disableWarnings: true }),
-    composeWithDevTools(applyMiddleware(save({ states: ['authenticatedUserReducer'] }), 
-    // websocketMiddleware()
-    ))
+    preloadedState,
+
+    composeWithDevTools(applyMiddleware(todosCustomMiddleware(), loginCustomMiddleware())),
+
   );
 };
 
-export default configureStore;
+// const configureStore = () => {
+//   return createStore(
+//     combinedReducers,
+//     // initialState,
+//     // load({  }),
+//     // composeWithDevTools(applyMiddleware(save({ }),
+//     applyMiddleware(customMiddleware())
+//     // )
+//   //
+//     // )
+//   );
+// };
+
+// export default configureStore;

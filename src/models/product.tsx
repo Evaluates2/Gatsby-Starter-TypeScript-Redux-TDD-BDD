@@ -8,15 +8,15 @@ export interface IProduct {
     name: string;
     price: number;
     inventory: number;
-    discounts: IDiscount
+    discounts: IDiscount;
 }
 
 export class Product implements IProduct {
 
     constructor(
-        public id: number = (Math.floor(Math.random() * 1000)), 
-        public name: string = "?", 
-        public price: number = null, 
+        public id: number = (Math.floor(Math.random() * 1000)),
+        public name: string = '?',
+        public price: number = null,
         public inventory: number = 0,
         public discounts: IDiscount = null) { }
 

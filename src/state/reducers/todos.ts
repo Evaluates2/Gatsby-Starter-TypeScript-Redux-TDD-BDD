@@ -1,8 +1,9 @@
-import { LOGIN_FAILED, LOGIN_REQUESTED, LOGIN_SUCCESS } from '../types/login';
+import { TODOS_SUCCESS, TODOS_REQUESTED, TODOS_FAILED } from '../types/todos';
 
 export const initialState = {
   fetching: false,
-  error: null
+  error: null,
+  todos: [],
 };
 
 interface IAction {
@@ -11,29 +12,33 @@ interface IAction {
 }
 
 const reducer = (state = initialState, action: IAction = {}) => {
-  
-  const {type, payload} = action 
+
+  console.log('getting action ', action);
+
+  const {type, payload} = action;
 
   switch (type) {
-    case LOGIN_REQUESTED:
+    case TODOS_REQUESTED:
       return {
         ...state,
         fetching: true,
-        error: null
+        error: null,
       };
 
-    case LOGIN_SUCCESS:
+    case TODOS_SUCCESS:
+      console.log('in todos success!');
       return {
         ...state,
         fetching: false,
-        error: null
+        error: null,
+        todos: payload,
       };
 
-    case LOGIN_FAILED:
+    case TODOS_FAILED:
       return {
         ...state,
         fetching: false,
-        error: payload
+        error: payload,
       };
 
     default:
