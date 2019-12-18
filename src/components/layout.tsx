@@ -6,6 +6,7 @@
  */
 
 import React, { useEffect } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -19,11 +20,11 @@ const Layout = ({ children }) => {
     const newThing: IProduct = new Product(null, null, null, null, {vip: 42});
     const newThing2: IProduct = new Product();
 
-    console.log('new thing is: ', newThing);
-
-    console.log('newThing2 is: ', newThing2);
+    console.log('An example of doing things when the app first loads: ', newThing);
+    
+    // dispatch a Redux action here to do some async thing when the webapp boots up.
+  
   }, []);
-
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -59,6 +60,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  userId: PropTypes.number
 }
 
-export default Layout
+export default (Layout);

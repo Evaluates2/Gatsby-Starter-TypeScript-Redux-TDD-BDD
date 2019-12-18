@@ -1,6 +1,14 @@
 # Gatsby-Starter-TypeScript-Redux-BDD
 An awesome Gatsby starter project with TypeScript, Redux, Jest, and Cypress.io + Cucumber.js already setup!
 
+## Extra Goodies
+  - Redux-devtools support preinstalled (For usage with Redux Dev Tools Chrome Extension)
+  - Redux-localstorage-simple preinstalled (For automatic syncing of specified reducers to local storage)
+  - Example of using a custom Middleware (a nice example of some async operation outside of all the components, kicked off by some redux dispatch, and with a response that then flows into the redux store)
+  - [ ] linting setup
+  - [ ] circleci / travisci setup
+
+
 
 # Usage
 
@@ -114,3 +122,74 @@ To run the cucumber specs first open cypress with `npm run cypress:open` and cli
 To run in headless mode: `npm run cypress:run`
 
 Note, you can also ignore everything but the feature files by adding the option in cypress.json
+
+## Adding Redux
+First, install the npm librarires for `gatsby-plugin-react-redux`, `react-redux`, and `redux`:
+```
+npm install --save gatsby-plugin-react-redux react-redux redux
+```
+
+Created a `./src/store/createStore.ts` file containing this:
+```
+import { createStore } from 'redux';
+
+function reducer() {
+  //...
+}
+
+// preloadedState will be passed in by the plugin
+export default preloadedState => {
+  return createStore(reducer, preloadedState);
+};
+```
+
+And added this plugin to the list in `./gatsby-config.js`:
+```
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-plugin-react-redux`,
+      options: {
+        // [required] - path to your createStore module
+        pathToCreateStoreModule: './src/state/createStore',
+        // [optional] - options passed to `serialize-javascript`
+        // info: https://github.com/yahoo/serialize-javascript#options
+        // will be merged with these defaults:
+        serialize: {
+          space: 0,
+          isJSON: true,
+          unsafe: false,
+        },
+      },
+    },
+  ],
+};
+```
+
+### Redux dev tools setup
+First, install:
+```
+npm install --save redux-devtools-extension
+```
+
+and use `composeWithDevTools` when creating your store:
+```
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+const store = createStore(reducer, composeWithDevTools(
+  applyMiddleware(...middleware),
+  // other store enhancers if any
+));
+```
+
+### Redux Local Storage Simple Setup
+First, install:
+```
+npm i --save-dev redux-localstorage-simple
+```
+
+
+### Custom Middleware Setup
+
+
