@@ -51,6 +51,8 @@
     "clean": "gatsby clean",
     "test": "jest ./src/**/*.test.ts[x] -- --watch",
     "test-once": "jest",
+    "e2e": "node_modules/.bin/cypress open",
+    "e2e-headless": "node_modules/.bin/cypress run",
     "lint": "tslint \"src/**/*.ts[x]\" --fix"
   },
   "repository": {

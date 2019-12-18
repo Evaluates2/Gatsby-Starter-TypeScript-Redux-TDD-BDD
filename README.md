@@ -45,7 +45,7 @@ npm test
 6. Run BDD / E2e Tests
 Locally With UI:
 ```
-node_modules/.bin/cypress open
+npm run e2e
 ```
 
 Headless Mode:
