@@ -2,10 +2,10 @@
 An awesome Gatsby starter project with TypeScript, Redux, Jest, and Cypress.io + Cucumber.js already setup!
 
 ## Extra Goodies
-  - Redux-devtools support preinstalled (For usage with Redux Dev Tools Chrome Extension)
-  - Redux-localstorage-simple preinstalled (For automatic syncing of specified reducers to local storage)
-  - Example of using a custom Middleware (a nice example of some async operation outside of all the components, kicked off by some redux dispatch, and with a response that then flows into the redux store)
-  - [-] linting setup
+  - [x] Redux-devtools support preinstalled (For usage with Redux Dev Tools Chrome Extension)
+  - [x] Redux-localstorage-simple preinstalled (For automatic syncing of specified reducers to local storage)
+  - [x] Example of using a custom Middleware (a nice example of some async operation outside of all the components, kicked off by some redux dispatch, and with a response that then flows into the redux store)
+  - [ ] linting setup
   - [ ] circleci / travisci setup
 
 
