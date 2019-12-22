@@ -51,7 +51,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest ./src/**/*.test.ts[x] -- --watch",
-    "test-once": "jest",
+    "test-once": "jest --coverage",
     "e2e": "node_modules/.bin/cypress open",
     "e2e-headless": "node_modules/.bin/cypress run",
     "lint": "tslint \"src/**/*.ts[x]\" --fix"
@@ -65,5 +65,9 @@
   },
   "env": {
     "cypress/globals": true
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,ts}"]
   }
 }
