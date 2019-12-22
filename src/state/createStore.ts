@@ -9,11 +9,7 @@ import loginCustomMiddleware from './middlewares/loginCustomMiddleware';
 export default preloadedState => {
   return createStore(
     combinedReducers,
-    {
-      ...preloadedState,
-      ...load({ states: ['loginReducer'], disableWarnings: true }),
-
-    },
+    getLoadedState(preloadedState),
     composeWithDevTools(
       applyMiddleware(
         save({ states: ['loginReducer'] }),
@@ -24,3 +20,14 @@ export default preloadedState => {
 
   );
 };
+
+const getLoadedState = (preloadedState) => {
+  if (typeof window !== 'undefined')
+    return {
+      ...preloadedState,
+      ...load({ states: ['loginReducer'], disableWarnings: true }),
+    }
+  return {
+    ...preloadedState,
+  }
+}

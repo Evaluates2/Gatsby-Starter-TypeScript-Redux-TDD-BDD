@@ -1,12 +1,19 @@
 # Gatsby-Starter-TypeScript-Redux-BDD
-An awesome Gatsby starter project with TypeScript, Redux, Jest, and Cypress.io + Cucumber.js already setup!
+
+<img src="./_Gatsby-Starter-TypeScript-Redux-TDD-BDD-Logo.png">
+
+An awesome Gatsby starter template project that care of the tooling setup, allowing you and your team to dive right into building ultra-fast React applications with test-driven development!
 
 ## Extra Goodies
+  - [x] TypeScript pre-installed and all src files have been converted to TypeScript.
+  - [x] Redux preinstalled and with simple examples of actions, reducers, and types, and custom middlewares. 
   - [x] Redux-devtools support preinstalled (For usage with Redux Dev Tools Chrome Extension)
-  - [ ] Redux-localstorage-simple preinstalled (For automatic syncing of specified reducers to local storage)
-  - [x] Example of using a custom Middleware (a nice example of some async operation outside of all the components, kicked off by some redux dispatch, and with a response that then flows into the redux store)
-  - [x] linting setup
-  - [ ] circleci / travisci setup
+  - [x] Redux-localstorage-simple preinstalled (For automatic syncing of specified reducers to local storage)
+  - [x] Unit testing with Jest pre-configured and ready to go. 
+  - [x] End-to-end UI automation testing with Cypress pre-configured. 
+  - [x] Cucumber plugin preinstalled into Cypress to run gherkin features files and steps definitions for outside-in behavor-driven-development. 
+  - [x] Linting pre-configured with Prettier and TSLint.
+  - [ ] Continuous integration & continuous deploy setup with Travis CI.
 
 
 
