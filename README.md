@@ -1,4 +1,3 @@
-# Gatsby-Starter-TypeScript-Redux-BDD
 
 <img src="./_Gatsby-Starter-TypeScript-Redux-TDD-BDD-Logo.png">
 
