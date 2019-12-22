@@ -4,7 +4,7 @@
 
 An awesome Gatsby starter template project that care of the tooling setup, allowing you and your team to dive right into building ultra-fast React applications with test-driven development!
 
-## Extra Goodies
+## Features
   - [x] TypeScript pre-installed and all src files have been converted to TypeScript.
   - [x] Redux preinstalled and with simple examples of actions, reducers, and types, and custom middlewares. 
   - [x] Redux-devtools support preinstalled (For usage with Redux Dev Tools Chrome Extension)
@@ -18,6 +18,13 @@ An awesome Gatsby starter template project that care of the tooling setup, allow
 
 
 # Usage
+The recommended way to 
+
+
+### Contributing To This Project
+We love feedback!
+
+## Local Development Setup Guide
 
 0. Please use node v10
 ```
