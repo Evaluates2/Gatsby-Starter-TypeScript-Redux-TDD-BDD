@@ -6,6 +6,8 @@ import Layout from '../components/layout';
 import Image from '../components/image';
 import SEO from '../components/seo';
 import Todos from '../components/todos';
+import PropTypes from 'prop-types';
+import Todo from '../components/todo';
 
 const IndexPage = ({ todos, userId }) => {
 
@@ -54,6 +56,12 @@ const IndexPage = ({ todos, userId }) => {
     </Layout>
   );
 };
+
+IndexPage.propTypes = {
+  // userId: PropTypes.number,
+  // todos: PropTypes.arrayOf(new Todo({title:"", description:""}) )
+}
+
 
 const mapStateToProps = state => {
   return {

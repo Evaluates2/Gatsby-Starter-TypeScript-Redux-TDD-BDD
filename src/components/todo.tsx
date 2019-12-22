@@ -6,8 +6,8 @@ import { ITodo } from './../models/todo';
 const todoStyle = {
     margin: '4vw',
     padding: '4vw',
-    'border-radius': '5px',
-    'background-color': 'papayawhip',
+    'borderRadius': '5px',
+    'backgroundColor': 'papayawhip',
 };
 
 const Todo = ({ todo }) => {
@@ -23,9 +23,5 @@ const Todo = ({ todo }) => {
         </div>
     );
 };
-
-// Todo.propTypes = {
-//     todo: PropTypes.oneOfT
-// }
 
 export default Todo;
