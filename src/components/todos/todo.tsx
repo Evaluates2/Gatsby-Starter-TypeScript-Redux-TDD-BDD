@@ -1,13 +1,14 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { ITodo } from './../models/todo';
+import { ITodo } from '../../models/todo';
 
 const todoStyle = {
     margin: '4vw',
     padding: '4vw',
     'borderRadius': '5px',
-    'backgroundColor': 'papayawhip',
+    'backgroundColor': 'rebeccapurple',
+    'color': 'white',
 };
 
 const Todo = ({ todo }) => {

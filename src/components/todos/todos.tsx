@@ -7,7 +7,7 @@ const containerStyle = {
     margin: '4vw',
     padding: '1vw',
     'borderRadius': '5px',
-    'backgroundColor': 'rebeccapurple',
+    'backgroundColor': 'papayawhip',
 };
 
 const Todos = ({ todos }) => {

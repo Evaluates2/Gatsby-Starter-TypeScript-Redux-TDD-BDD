@@ -16,67 +16,84 @@ An awesome Gatsby starter template project that care of the tooling setup, allow
 
 
 
+
 # Usage
-The recommended way to 
+You can scaffold out a fresh new gatsby project use this template with the gatsby `new` command:
+```
+gatsby new my-cool-new-react-project https://github.com/JimTheMan/Gatsby-Starter-TypeScript-Redux-TDD-BDD
+```
+
+_note: installing gatsby will probably make development easier, but you could also use `npx gatsby` if you didn't want to._
+
+This will create a the folder specified. Navigate into this directory 
+
+
+# Developing 
 
 
 ### Contributing To This Project
 We love feedback!
 
 ## Local Development Setup Guide
-
-0. Please use node v10
+We recommend node v11.15.0 as that's what we used to develop this project.
 ```
 nvm use
 ```
 
-1. Install Dependencies
+Install dependencies:
 ```
 npm i
 ```
 
-2. Run Locally
+Run locally (with hot module reloading)
 ```
 npx gatsby deploy
 ```
 
-3. Create Local Build
+Create local build
 ```
 npx gatsby build
 ```
 
-4. Serve Local Build
+Serve local build
 ```
 npx gatsby serve
 ```
 
-5. Run Unit Tests
+Run Unit Tests (TDD watch-mode style)
 ```
 npm test
 ```
 
-6. Run BDD / E2e Tests
-Locally With UI:
+Run Unit Tests (Single run for CI and with code coverage output)
+```
+npm run test-once
+```
+
+Run BDD / E2e Tests (Locally With UI)
 ```
 npm run e2e
 ```
 
-Headless Mode:
+Run BDD / E2e Tests (Headless Mode for CI):
 ```
 node_modules/.bin/cypress run
 ```
 
-7. Run Linting
+Run linting
 ```
 npm run lint
 ```
 
-8. Deploy
+Deploy
 ```
 npx gatsby deploy
 ```
 
-# Scaffolding
+
+## How It Was Made
+If you are interested in learning how this project was created, we have tried to document the steps to recreate this project below.
+
 This project was initally created with the [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default) project.
 ```
 gatsby new myproject https://github.com/gatsbyjs/gatsby-starter-default
