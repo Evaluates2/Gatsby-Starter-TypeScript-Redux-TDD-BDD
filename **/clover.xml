@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1577169336865" clover="3.2.0">
+  <project timestamp="1577169336865" name="All files">
+    <metrics statements="118" coveredstatements="48" conditionals="35" coveredconditionals="11" methods="41" coveredmethods="12" elements="194" coveredelements="71" complexity="0" loc="118" ncloc="118" packages="11" files="25" classes="25"/>
+    <package name="components">
+      <metrics statements="19" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="header.tsx" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/components/header.tsx">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+      </file>
+      <file name="image.tsx" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/components/image.tsx">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+      </file>
+      <file name="layout.tsx" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/components/layout.tsx">
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+      </file>
+      <file name="seo.tsx" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/components/seo.tsx">
+        <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.login">
+      <metrics statements="17" coveredstatements="17" conditionals="6" coveredconditionals="6" methods="5" coveredmethods="5"/>
+      <file name="login-btn.tsx" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/components/login/login-btn.tsx">
+        <metrics statements="13" coveredstatements="13" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="40" count="5" type="stmt"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="50" count="5" type="stmt"/>
+        <line num="55" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+      </file>
+      <file name="login-section.tsx" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/components/login/login-section.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.todos">
+      <metrics statements="10" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="todo.tsx" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/components/todos/todo.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+      </file>
+      <file name="todos.tsx" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/components/todos/todos.tsx">
+        <metrics statements="6" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="models">
+      <metrics statements="0" coveredstatements="0" conditionals="5" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="product.tsx" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/models/product.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="5" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      </file>
+      <file name="todo.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/models/todo.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="pages">
+      <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="404.tsx" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/pages/404.tsx">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/pages/index.tsx">
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+      </file>
+      <file name="page-2.tsx" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/pages/page-2.tsx">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="services">
+      <metrics statements="6" coveredstatements="3" conditionals="1" coveredconditionals="0" methods="4" coveredmethods="2"/>
+      <file name="simple-login.service.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/services/simple-login.service.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+      <file name="todos.service.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/services/todos.service.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="state">
+      <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="createStore.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/state/createStore.ts">
+        <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="state.actions">
+      <metrics statements="8" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
+      <file name="login.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/state/actions/login.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+      </file>
+      <file name="todos.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/state/actions/todos.ts">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="state.middlewares">
+      <metrics statements="18" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <file name="loginCustomMiddleware.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/state/middlewares/loginCustomMiddleware.ts">
+        <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+      <file name="todosCustomMiddleware.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/state/middlewares/todosCustomMiddleware.ts">
+        <metrics statements="9" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="state.reducers">
+      <metrics statements="17" coveredstatements="13" conditionals="13" coveredconditionals="5" methods="2" coveredmethods="2"/>
+      <file name="login.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/state/reducers/login.ts">
+        <metrics statements="9" coveredstatements="6" conditionals="7" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="0" falsecount="2"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="18" count="2" type="cond" truecount="2" falsecount="3"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+      </file>
+      <file name="root-reducer.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/state/reducers/root-reducer.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="todos.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/state/reducers/todos.ts">
+        <metrics statements="8" coveredstatements="7" conditionals="6" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="0" falsecount="2"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="18" count="3" type="cond" truecount="3" falsecount="1"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="state.types">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="login.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/state/types/login.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+      </file>
+      <file name="todos.ts" path="/Users/jim/Git-Projects/Gatsby-Starter-TypeScript-Redux-TDD-BDD/src/state/types/todos.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

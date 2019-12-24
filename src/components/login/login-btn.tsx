@@ -52,7 +52,7 @@ const LoginBtn = ({ currentlyLoggedIn }:
             ...BtnStyle,
             ...(currentlyLoggedIn ? LogoutBtnStyle : LoginBtnStyle)
         }}
-        onClick={currentlyLoggedIn ? loginClicked : logoutClicked}
+        onClick={event => { currentlyLoggedIn ? logoutClicked() : loginClicked() }}
         >
             {currentlyLoggedIn ? "Logout" : "Login"}
         </button>

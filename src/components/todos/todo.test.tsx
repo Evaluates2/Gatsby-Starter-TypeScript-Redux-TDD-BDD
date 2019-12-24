@@ -1,33 +1,30 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Todo from './todo';
+import { ITodo } from '../../models/todo';
 
 describe('Todo', () => {
 
-    it('should render without errors.', () => {
-    
-        const fakeTodo = {
-            "ok": "hmm"
+    it('should render prop title and description.', () => {
+
+        const fakeTodo: ITodo = {
+            "id": 42,
+            "title": "A cool title",
+            "description": "A nice description"
         }
 
-        renderer.create(<Todo todo={fakeTodo} />)
+        const renderedTodo = renderer.create(<Todo todo={fakeTodo} />)
             .toJSON();
 
-        // expect(tree).toMatchSnapshot()
+            renderedTodo.children.forEach(childElement => {
 
-        expect(true).toBe(true);
+            if (childElement.type === 'h1')
+                expect(childElement.children).toEqual([fakeTodo.title])
 
-    });
+            if (childElement.type === 'p')
+                expect(childElement.children).toEqual([fakeTodo.description])
 
-    it('passes todos to children', () => {
-        // const fakeTodos = [];
-
-        // renderer.create(<Todos todos={fakeTodos} />)
-        //     .toJSON();
-
-        // expect(tree).toMatchSnapshot()
-
-        expect(true).toBe(true);
+        })
 
     });
 

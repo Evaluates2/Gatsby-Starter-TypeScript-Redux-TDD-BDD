@@ -15,6 +15,7 @@ An awesome Gatsby starter template project that care of the tooling setup, allow
   - [ ] Continuous integration & continuous deploy setup with Travis CI.
 
 
+# The Imlementation Details Is The Hardest Part!
 
 
 # Usage
@@ -28,7 +29,10 @@ _note: installing gatsby will probably make development easier, but you could al
 This will create a the folder specified. Navigate into this directory 
 
 
-# Developing 
+## Developing With A Test-First Mindset
+
+
+## A Word On "Chasing Hunnits" Aka What Not To Test
 
 
 ### Contributing To This Project
@@ -222,4 +226,17 @@ npm i --save-dev redux-localstorage-simple
 
 ### Custom Middleware Setup
 
+
+
+### Localstorage Redux Integration
+
+
+
+### Jest Configuration
+
+
+### A Note On Visual Testing
+
+
+### It Takes A Genius To Recognise Good Tests
 

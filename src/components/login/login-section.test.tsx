@@ -1,34 +1,42 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-// import Todo from './todo';
+import React from "react"
+import renderer from "react-test-renderer"
+import LoginBtn from "./login-btn"
+import { Provider } from "react-redux"
+import configureMockStore from "redux-mock-store"
+import { LOGIN_REQUESTED, LOGOUT } from "../../state/types/login"
+import LoginSection from "./login-section"
+import ShallowRenderer from 'react-test-renderer/shallow';
+import { forEachChild } from "typescript"
 
-describe('Todo', () => {
+describe("LoginBtn", () => {
+    describe("Rendering buttons properly based on props", () => {
 
-    it('should render without errors.', () => {
-    
-        const fakeTodo = {
-            "ok": "hmm"
-        }
 
-        // renderer.create(<Todo todo={fakeTodo} />)
-        //     .toJSON();
+        it('should render as "Login" btn when given no props.', () => {
 
-        // expect(tree).toMatchSnapshot()
+            const shallowRenderer = new ShallowRenderer();
+            shallowRenderer.render(
+                <LoginSection userId={5} />
+            )
 
-        expect(true).toBe(true);
+            const result = shallowRenderer.getRenderOutput();
 
-    });
+            result.props.children.forEach(childElement => {
 
-    it('passes todos to children', () => {
-        // const fakeTodos = [];
+                if (childElement.type === 'h2') {
 
-        // renderer.create(<Todos todos={fakeTodos} />)
-        //     .toJSON();
+                    expect(childElement.props.children).toEqual(['User Id: ', 5])
+                }
 
-        // expect(tree).toMatchSnapshot()
+            })
 
-        expect(true).toBe(true);
+            expect(result.props.children).toContainEqual(
+              
+                <LoginBtn currentlyLoggedIn={false} />
+            
+            );
+        })
 
-    });
+    })
 
-});
+})

@@ -13,8 +13,6 @@ interface IAction {
 
 const reducer = (state = initialState, action: IAction = {}) => {
 
-  console.log('getting action ', action);
-
   const {type, payload} = action;
 
   switch (type) {
@@ -26,7 +24,6 @@ const reducer = (state = initialState, action: IAction = {}) => {
       };
 
     case TODOS_SUCCESS:
-      console.log('in todos success!');
       return {
         ...state,
         fetching: false,

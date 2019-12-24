@@ -6,12 +6,12 @@ import { ITodo } from '../../models/todo';
 const todoStyle = {
     margin: '4vw',
     padding: '4vw',
-    'borderRadius': '5px',
-    'backgroundColor': 'rebeccapurple',
-    'color': 'white',
+    borderRadius: '5px',
+    backgroundColor: 'rebeccapurple',
+    color: 'white',
 };
 
-const Todo = ({ todo }) => {
+const Todo = ({ todo }: { todo: ITodo }) => {
 
     return (
         <div style={todoStyle}>
@@ -23,6 +23,10 @@ const Todo = ({ todo }) => {
             </p>
         </div>
     );
+};
+
+Todo.propTypes = {
+    todo: PropTypes.any,
 };
 
 export default Todo;

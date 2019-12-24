@@ -6,7 +6,7 @@
  */
 
 import React, { useEffect } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -66,4 +66,4 @@ Layout.propTypes = {
   userId: PropTypes.number,
 };
 
-export default (Layout);
+export default Layout;
