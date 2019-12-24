@@ -15,9 +15,6 @@ An awesome Gatsby starter template project that care of the tooling setup, allow
   - [ ] Continuous integration & continuous deploy setup with Travis CI.
 
 
-# The Imlementation Details Is The Hardest Part!
-
-
 # Usage
 You can scaffold out a fresh new gatsby project use this template with the gatsby `new` command:
 ```
@@ -30,9 +27,17 @@ This will create a the folder specified. Navigate into this directory
 
 
 ## Developing With A Test-First Mindset
+This is, after all, the "TDD-BDD" template, and it was designed to be used by engineering teams following these test-driven and behavior-driven methodologies. 
+
+
+
+## Unit Tests & End-To-End Tests: The Ying & Yang of Automated Testing
+
+
 
 
 ## A Word On "Chasing Hunnits" Aka What Not To Test
+
 
 
 ### Contributing To This Project
