@@ -34,9 +34,8 @@ const LogoutBtnStyle = {
     cursor: "pointer"
 };
 
-
-
-const LoginBtn = ({ currentlyLoggedIn }) => {
+const LoginBtn = ({ currentlyLoggedIn }:
+     { currentlyLoggedIn: boolean}) => {
 
     const dispatch = useDispatch();
 
@@ -52,11 +51,21 @@ const LoginBtn = ({ currentlyLoggedIn }) => {
         <button style={{
             ...BtnStyle,
             ...(currentlyLoggedIn ? LogoutBtnStyle : LoginBtnStyle)
-        }}>
+        }}
+        onClick={currentlyLoggedIn ? loginClicked : logoutClicked}
+        >
             {currentlyLoggedIn ? "Logout" : "Login"}
         </button>
     );
 };
+
+LoginBtn.propTypes = {
+    currentlyLoggedIn: PropTypes.bool
+}
+
+LoginBtn.defaultProps = {
+    currentlyLoggedIn: false
+}
 
 export default LoginBtn;
 
