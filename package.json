@@ -39,7 +39,8 @@
     "serverless-offline": "^5.12.1",
     "ts-jest": "^24.2.0",
     "tslint": "^5.20.1",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.3",
+    "wait-on": "^3.3.0"
   },
   "keywords": [
     "gatsby"
