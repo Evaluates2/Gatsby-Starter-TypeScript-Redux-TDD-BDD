@@ -1,27 +1,27 @@
-import React from "react"
-import renderer from "react-test-renderer"
-import LoginBtn from "./login/login-btn"
-import { Provider } from "react-redux"
-import configureMockStore from "redux-mock-store"
-import { LOGIN_REQUESTED, LOGOUT } from "../state/types/login"
-import Layout from "./layout"
+import React from 'react';
+import renderer from 'react-test-renderer';
+import LoginBtn from './login/login-btn';
+import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store';
+import { LOGIN_REQUESTED, LOGOUT } from '../state/types/login';
+import Layout from './layout';
 
-describe("Layout", () => {
-    describe("Rendering buttons properly based on props", () => {
+describe('Layout', () => {
+    describe('Rendering buttons properly based on props', () => {
 
         let mockStore;
         let store;
         beforeEach(() => {
-            mockStore = configureMockStore()
+            mockStore = configureMockStore();
 
             store = mockStore({
                 loggedInReducer: {
                     fetching: false,
                     error: null,
                     userId: null,
-                }
-            })
-        })
+                },
+            });
+        });
 
         it('', () => {
 
@@ -35,8 +35,8 @@ describe("Layout", () => {
                 // .toJSON()
 
             // expect(tree.children).toContain("Login")
-            expect(true).toEqual(true)
-        })
+            expect(true).toEqual(true);
+        });
 
-    })
-})
+    });
+});

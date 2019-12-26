@@ -6,8 +6,8 @@ const containerStyle = {
     color: 'black',
     margin: '4vw',
     padding: '1vw',
-    'borderRadius': '5px',
-    'backgroundColor': 'papayawhip',
+    borderRadius: '5px',
+    backgroundColor: 'papayawhip',
 };
 
 const Todos = ({ todos }) => {

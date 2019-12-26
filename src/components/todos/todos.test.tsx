@@ -5,7 +5,7 @@ import Todos from './todos';
 describe('Todos', () => {
 
     it('should render without errors.', () => {
-    
+
         // renderer.create(<Todos todos={fakeTodos} />)
         //     .toJSON();
 

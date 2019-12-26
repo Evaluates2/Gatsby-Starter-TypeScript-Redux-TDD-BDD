@@ -9,13 +9,13 @@ describe("todosService", () => {
         const expectedResponseData = [
             {
                 id: 1,
-                title: 'First thing',
-                description: 'This is a very interesting description',
+                title: 'First Thing',
+                description: 'This is a very interesting description.',
             },
             {
                 id: 2,
-                title: 'Second thing',
-                description: 'This is a another interesting description',
+                title: 'Second Thing',
+                description: 'This is a another interesting description.',
             },
         ]
 

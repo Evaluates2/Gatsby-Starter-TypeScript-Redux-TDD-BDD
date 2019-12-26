@@ -3,6 +3,8 @@
 
 An awesome Gatsby starter template project that care of the tooling setup, allowing you and your team to dive right into building ultra-fast React applications with test-driven development!
 
+[![Build Status](https://api.travis-ci.org/JimTheMan/Gatsby-Starter-TypeScript-Redux-TDD-BDD.svg?branch=master)](https://api.travis-ci.org/JimTheMan/Gatsby-Starter-TypeScript-Redux-TDD-BDD.svg?branch=master)
+
 ## Features
   - [x] TypeScript pre-installed and all src files have been converted to TypeScript.
   - [x] Redux preinstalled and with simple examples of actions, reducers, and types, and custom middlewares. 

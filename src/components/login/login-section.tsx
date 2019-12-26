@@ -1,5 +1,4 @@
 
-
 import PropTypes from 'prop-types';
 import React from 'react';
 import LoginBtn from './login-btn';
@@ -12,19 +11,19 @@ const loginSectionStyle = {
     color: 'white',
 };
 
+// Treats the number 0 as an INVALID userId
 const LoginSection = ({ userId }) => {
 
     return (
-        <div id="login-section" style={loginSectionStyle}>
-            <h2 id="userId-section">User Id: {userId}</h2>
+        <div id='login-section' style={loginSectionStyle}>
+            <h2 id='userId-section'>User Id: {userId !== 0 && userId}</h2>
             <LoginBtn currentlyLoggedIn={!!userId}/>
         </div>
     );
 };
 
 LoginSection.propTypes = {
-    userId: PropTypes.number
-}
+    userId: PropTypes.number,
+};
 
 export default LoginSection;
-

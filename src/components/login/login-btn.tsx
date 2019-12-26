@@ -10,10 +10,10 @@ const BtnStyle = {
     borderRadius: '5px',
     backgroundColor: 'white',
     color: 'rebeccapurple',
-    outline: "0",
-    cursor: "pointer",
-    border: "1px solid #a9a9a9 ",
-    boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.3)"
+    outline: '0',
+    cursor: 'pointer',
+    border: '1px solid #a9a9a9 ',
+    boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.3)',
 };
 
 const LoginBtnStyle = {
@@ -23,7 +23,7 @@ const LoginBtnStyle = {
 
 const LogoutBtnStyle = {
     backgroundColor: '#DCDCDC',
-    color: 'rebeccapurple'
+    color: 'rebeccapurple',
 };
 
 const LoginBtn = ({ currentlyLoggedIn }:
@@ -42,22 +42,21 @@ const LoginBtn = ({ currentlyLoggedIn }:
     return (
         <button style={{
             ...BtnStyle,
-            ...(currentlyLoggedIn ? LogoutBtnStyle : LoginBtnStyle)
+            ...(currentlyLoggedIn ? LogoutBtnStyle : LoginBtnStyle),
         }}
-        onClick={event => { currentlyLoggedIn ? logoutClicked() : loginClicked() }}
+        onClick={event => { currentlyLoggedIn ? logoutClicked() : loginClicked(); }}
         >
-            {currentlyLoggedIn ? "Logout" : "Login"}
+            {currentlyLoggedIn ? 'Logout' : 'Login'}
         </button>
     );
 };
 
 LoginBtn.propTypes = {
-    currentlyLoggedIn: PropTypes.bool
-}
+    currentlyLoggedIn: PropTypes.bool,
+};
 
 LoginBtn.defaultProps = {
-    currentlyLoggedIn: false
-}
+    currentlyLoggedIn: false,
+};
 
 export default LoginBtn;
-

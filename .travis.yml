@@ -22,26 +22,24 @@ before_script:
   - echo do pre-scripts things here...
 
 script:
-  # - ls
-  # - gulp test
-  # - protractor protractor.conf.js
-  # - gulp build
 
+  ## Run unit tests
+  - npm run test-once
+
+  ## Runs e2e cypress + cucmber tests
   - npm start & wait-on http://localhost:8000
   - npm run e2e-headless
+
+# - do your other automated tests here!
 
 after_script:
   - echo ran script
 after_success:
   - npm run build
-  # - git config credential.helper "store --file=.git/credentials"
-  # - echo "https://${GH_TOKEN}:@github.com/ng-nj.org.git" > .git/credentials
-  # - echo 'Success'
-  # - ls
-  # - git config --global user.email "mrdotjim@gmail.com"
-  # - git config --global user.name "JimTheMan"
-  # - bash ./deploy.sh
-  - echo Nice!
+
+# - do your deploy commands here!
+  
+  - echo Welp, that's another happy CI deploy!
 matrix:
   fast_finish: true
 

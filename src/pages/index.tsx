@@ -8,13 +8,13 @@ import Todos from '../components/todos/todos';
 import PropTypes from 'prop-types';
 import LoginSection from '../components/login/login-section';
 
-const imgStyle = { maxWidth: '300px', marginBottom: '1.45rem' }
+const imgStyle = { maxWidth: '300px', marginBottom: '1.45rem' };
 
 const pStyle = {
   fontSize: 'calc(5px + 3vw)',
   lineHeight: 'calc(12px + 3vw)',
-  margin: '2px'
-}
+  margin: '2px',
+};
 
 const IndexPage = ({ todos, userId }) => {
 
@@ -43,8 +43,7 @@ const IndexPage = ({ todos, userId }) => {
 IndexPage.propTypes = {
   // userId: PropTypes.number,
   // todos: PropTypes.arrayOf(new Todo({title:"", description:""}) )
-}
-
+};
 
 const mapStateToProps = state => {
   return {
