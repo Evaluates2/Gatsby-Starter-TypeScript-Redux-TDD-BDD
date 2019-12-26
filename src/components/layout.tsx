@@ -55,6 +55,11 @@ const Layout = ({ children }) => {
           © {new Date().getFullYear()}, Built with
           {' '}
           <a href='https://www.gatsbyjs.org'>Gatsby</a>
+          {' '}
+          by
+          {' '}
+          <a href='https://www.evaluates2.com'>Evaluates2</a>
+          .
         </footer>
       </div>
     </>

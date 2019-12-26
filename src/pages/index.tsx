@@ -26,7 +26,7 @@ const IndexPage = ({ todos, userId }) => {
       </div>
 
       <div style={pStyle}>
-        <p>Welcome to your new TypeScript-Redux-TDD-BDD Gatsby site.</p>
+        <p>Welcome to your new Gatsby site...</p>
         <p>Now go build something great!</p>
       </div>
 
