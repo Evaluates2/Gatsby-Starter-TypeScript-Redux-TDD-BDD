@@ -19,7 +19,7 @@ module.exports = {
     "!**/node_modules/**"
   ],
   collectCoverage: true,
-  coverageDirectory: "**",
+  coverageDirectory: 'coverage',
   preset: "ts-jest",
   moduleFileExtensions: [
     "js",

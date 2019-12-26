@@ -7,17 +7,17 @@ import LoginBtn from './login-btn';
 const loginSectionStyle = {
     margin: '4vw',
     padding: '4vw',
-    'borderRadius': '5px',
-    'backgroundColor': 'rebeccapurple',
-    'color': 'white',
+    borderRadius: '5px',
+    backgroundColor: 'rebeccapurple',
+    color: 'white',
 };
 
 const LoginSection = ({ userId }) => {
 
     return (
-        <div style={loginSectionStyle}>
-            <h2>User Id: {userId}</h2>
-            <LoginBtn/>
+        <div id="login-section" style={loginSectionStyle}>
+            <h2 id="userId-section">User Id: {userId}</h2>
+            <LoginBtn currentlyLoggedIn={!!userId}/>
         </div>
     );
 };
