@@ -119,7 +119,7 @@ First of all, don't panic. If someone find a bug, the first step to describing i
 It's very important to have BOTH the end-to-end UI tests and the unit tests because they really provide different purposes and really pick up for the weaknesses of the other. A suite of passing end-to-end tests that really thoroughly and correctly test your entire system can really give you a high level of confidence that that system should be working properly. However, when the cypress tests break they don't always give you a great deal of insight into _why_ the bug in happening and what in the code needs to be changed in order to fix it! Unit tests are in a way the reverse. Since unit tests are very focused and specific, a failure should give you exact line numbers in the code and show exactly the output in the code that was expected vs what was returned. As great essential as unit tests are for deploying with confidence, it seems that we can never _truly_ believe front-end applications are working properly, as a whole and from a user-perspective with just passing unit tests alone.
 
 
-### Cypress Is Great For UI Testing
+## Cypress Is Great For UI Testing
 There are many UI automation libraries, and while I'm not going to trow out any names of clunky or frustrating to use ones, our team has really found working with Cypress, for the most part (and after some initial growing pains) to be a joy. The excellent auto-rerunning UI development environment, great api that is promise-based but but is abstract enough to where things just work properly and consistenly. For browser development in partcular, we definitely have found Cypress to be excellent! Another thing we like about Cypress is that it is completely agnotic to the front-end framework you use, yet it works with React extremely well!
 
 
@@ -127,11 +127,11 @@ There are many UI automation libraries, and while I'm not going to trow out any 
 Once you get familiar with unit testing you want to test everything, and sometimes you may feel the need to test everything just for the sake of testing everything. Sure, it's nice to look at fully green unit test code coverage reports (such as the one from Titanium Lambda), but in reality testing unit testing isn't always easy, it takes some time for you to sit down and really think about what's going on and ensure you are testing the right things (which is why having a pair partner there keeping you honest is so great). For example, in this project we chose not to write unit tests for the configuration files from `gatsby-default-starter` such as `seo.tsx` or `404.tsx`. 
 
 
-## ScreenShot Testing
+## Screenshot Testing
 This propject does not include any screenshot testing. We believe that once your project is in a really solid state where the UI is pretty set, then some screenshot testing framework such as [percy.io](https://percy.io/) can be extremely useful in ensuring there are not regressions in css, layout, and other visual elements that are not really suited for testing with Cypress. We encourage you to experiment with whatever other types of automated testing you may find useful, but we would advise not to forgoe the base unit testing & cypress + cucumber testing we recommend here! 
 
 
-## Repaclacing PropTypes with TypeScript Interfaces
+## Replacing PropTypes with TypeScript Interfaces
 We struggled for a while with trying to figure out how to speficy through React `propTypes` that some property was an instance of a TypeScript interface. Then after not finding a good solution and speaking to other engineers, we came to the conclusion that we prefered to use functional components that use TypeScript to define the types of the props instead of propTypes. This just overall made things easier, and the React propTypes don't really provide any extra information that can't be convyed arguably more cleanly with interfaces and so we figured keeping the propTypes would only be an unnecessary duplication and burden for reading and updating these props later.  
 
 
@@ -284,10 +284,39 @@ const store = createStore(reducer, composeWithDevTools(
 ));
 ```
 
-### Redux Local Storage Simple Setup
+### Redux Local Storage Setup
 First, install:
 ```
 npm i --save-dev redux-localstorage-simple
+```
+
+Then change your createStore function to use _both_ gatsby's preloaded state and the slices of state you'd like to be automatically synced with localstorage:
+```
+export default preloadedState => {
+  return createStore(
+    combinedReducers,
+    getLoadedState(preloadedState),
+    composeWithDevTools(
+      applyMiddleware(
+        save({ states: ['loginReducer'] }),
+        todosCustomMiddleware(),
+        loginCustomMiddleware()
+      )
+    ),
+
+  );
+};
+
+const getLoadedState = (preloadedState) => {
+  if (typeof window !== 'undefined')
+    return {
+      ...preloadedState,
+      ...load({ states: ['loginReducer'], disableWarnings: true }),
+    }
+  return {
+    ...preloadedState,
+  }
+}
 ```
 
 
@@ -295,19 +324,53 @@ npm i --save-dev redux-localstorage-simple
 // TODO
 
 
-### Localstorage Redux Integration
-// TODO
-
-
 
 ### Jest Configuration
-// TODO
+Configuring jest correctly with typescript was a bit of a struggle. One gotcha for us was that using the package.json "jest" option caused unexpected issues... Instead, we set the configuration via a `jest.config.js` file:
+
+```
+module.exports = {
+
+  transform: {
+    "^.+\\.[jt]sx?$": "<rootDir>/jest-preprocess.js",
+  },
+  moduleNameMapper: {
+    ".+\\.(css|styl|less|sass|scss)$": `identity-obj-proxy`,
+    ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": `<rootDir>/__mocks__/file-mock.js`,
+  },
+  testPathIgnorePatterns: [`node_modules`, `.cache`, `public`],
+  transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
+  globals: {
+    __PATH_PREFIX__: ``,
+  },
+  testURL: `http://localhost`,
+  setupFiles: [`<rootDir>/loadershim.js`],
+  collectCoverageFrom: [
+    "**/*.{ts,tsx}",
+    "!**/node_modules/**"
+  ],
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  preset: "ts-jest",
+  moduleFileExtensions: [
+    "js",
+    "jsx",
+    "ts",
+    "tsx"
+  ]
+}
+```
+
+and a `jest.preprocess.js` file:
+```
+const babelOptions = {
+    presets: ["babel-preset-gatsby", "@babel/preset-typescript"],
+}
+
+module.exports = require("babel-jest").createTransformer(babelOptions)
+```
 
 
-### A Note On Visual Testing
-// TODO
 
 
-### It Takes A Genius To Recognise Good Tests
-// TODO
 
