@@ -5,7 +5,8 @@ An awesome Gatsby starter template project that care of the tooling setup, allow
 
 [![Build Status](https://api.travis-ci.org/JimTheMan/Gatsby-Starter-TypeScript-Redux-TDD-BDD.svg?branch=master)](https://travis-ci.org/JimTheMan/Gatsby-Starter-TypeScript-Redux-TDD-BDD)
 
-## Features
+# Features
+
   - [x] TypeScript pre-installed and all src files have been converted to TypeScript.
   - [x] Redux preinstalled and with simple examples of actions, reducers, and types, and custom middlewares. 
   - [x] Redux-devtools support preinstalled (For usage with Redux Dev Tools Chrome Extension)
@@ -14,39 +15,26 @@ An awesome Gatsby starter template project that care of the tooling setup, allow
   - [x] End-to-end UI automation testing with Cypress pre-configured. 
   - [x] Cucumber plugin preinstalled into Cypress to run gherkin features files and steps definitions for outside-in behavor-driven-development. 
   - [x] Linting pre-configured with Prettier and TSLint.
-  - [ ] Continuous integration & continuous deploy setup with Travis CI.
+  - [x] Continuous integration & continuous deploy setup with Travis CI.
 
 
 # Usage
-You can scaffold out a fresh new gatsby project use this template with the gatsby `new` command:
+You can scaffold out a fresh new gatsby project use this template with the gatsby `new` command.
+
+This will create  in the current dictory a new folder named `my-cool-react-project` containing a fresh scaffold of this starter.
 ```
-gatsby new my-cool-new-react-project https://github.com/JimTheMan/Gatsby-Starter-TypeScript-Redux-TDD-BDD
+gatsby new my-cool-react-project https://github.com/JimTheMan/Gatsby-Starter-TypeScript-Redux-TDD-BDD
 ```
 
-_note: installing gatsby will probably make development easier, but you could also use `npx gatsby` if you didn't want to._
+Then navigate into your snazzy new project, and you're ready to go!
+```
+cd my-cool-react-project
+```
 
-This will create a the folder specified. Navigate into this directory 
-
-
-## Developing With A Test-First Mindset
-This is, after all, the "TDD-BDD" template, and it was designed to be used by engineering teams following these test-driven and behavior-driven methodologies. 
-
+_note: installing gatsby globally, `npm i -g gatsby`, will probably make development easier, but you could also use `npx gatsby` if you didn't want to._
 
 
-## Unit Tests & End-To-End Tests: The Ying & Yang of Automated Testing
-
-
-
-
-## A Word On "Chasing Hunnits" Aka What Not To Test
-
-
-
-### Contributing To This Project
-We love feedback!
-
-## Local Development Setup Guide
-We recommend node v11.15.0 as that's what we used to develop this project.
+This project uses relatively new libraries so any node version below v11 will probably just result in build issues. We recommend v11.15.0, and if you have [nvm](https://github.com/nvm-sh/nvm) installed you can switch to this version like so:
 ```
 nvm use
 ```
@@ -58,17 +46,17 @@ npm i
 
 Run locally (with hot module reloading)
 ```
-npx gatsby deploy
+npm run deploy
 ```
 
 Create local build
 ```
-npx gatsby build
+npm run build
 ```
 
 Serve local build
 ```
-npx gatsby serve
+npm run serve
 ```
 
 Run Unit Tests (TDD watch-mode style)
@@ -102,8 +90,80 @@ npx gatsby deploy
 ```
 
 
-## How It Was Made
-If you are interested in learning how this project was created, we have tried to document the steps to recreate this project below.
+## Developing With A Test-First Mindset
+This is, after all, the "TDD-BDD" template, and it was designed to be used by engineering teams following these test-driven and behavior-driven methodologies. This project is setup excellently for following an "outside-in" testing strategy. At a high level, this how our feature development process normally goes:
+
+### 1. Create a Feature File With User Stories For The New Feature
+Starting with the feature files ensures that you are only building things that really provide user-facing value. In the "Scenario" block you explicitly write what the user wants to be able to do any why. We recommend always that in general when writing these user story scenarios you follow the "As a... / I want to... / Because..." structure. 
+
+### 2. Describe the Scenarios In More Detail With Given, When, Then Syntax
+Now that you have user stories, we can write these as tests that we can execute. In order to map the user flows easily to step definitions and UI automation tests, we describe what happens in our systems as the hypothetical user interacts with it. In the "Given" section you write the setup code. In the "When" section you write the actual action you are testing, and in the "Then" section we write our assertions. You may also use the Gherkin keywords "And" and "But" if you believe they will make your tests more consolidated.
+
+### 3. Write Failing Step Definitions
+Even without writing any src code for the feature, you might be surprised how much of it you can imagine and write tests for beforehand. You can at least create some empty step definitions mapping to each Feature file, and often times the "Given" step's Gherkin is often something like, "Given I'm a X  user on y page", and you can easily see the two-liner implementation for that in the code here. The "When" is the action you are trying to test. For example, "When I click this button" or, "when I interact with the app in some way" are good choices, and to implement this you basically the follow the very good Cypress api for selecting the proper elements and interacting with them. Sometimes you will need to use ".then" and drop into JQuery element world (which we provide examples of here), but in the end you can do whatever you could want to do without worry that broken tests are the library's fault. hehe. Then "Then" block should be your expectations whcih you are performing from a user point of view. Think about how the UI on the page should change after some user performs the "When" step- what in the DOM then will be different? If you can answer that question then you can basically fill your "Then" step definitions with cypress code that latches onto these change DOM elements and asserts they are changing in the expected way!
+
+
+### 4. Write The Implementation Code With "Classic TDD"
+After you write your failing step definitions it can be tempting you just write all the source code and get it working, but don't jump the gun! It's important to see your unit tests failing before you implement the code so that you can be confident you aren't just getting false-positive passing unit tests when writing them after the fact (this can countered by occassionaly purposely changing the source code and correctly guessing how the tests fail as a sanity check, but this is a slippery slope to start playing and in our experiences normally ends in sloppier tests). When we say "Classic TDD" we mean basically writing source code with unit tests in short red-green-refactor cycles. Write some failing bit, make it pass, and then refactor you code (and the beauty is you should instantly know by failing tests if you've accidentally broken the logic with your refactorings). In this project we have chosen to use Jest for unit testing. This project provides some examples for testing redux-integrated components, shallow-rendering components, etc. We also provide examples for testing asynchronous services and testing all our various redux-related files. When unit testing, keep in mind to "test the edges" of whatever thing you are trying to test. For a pure function, write a test for each different input you can pass into it and assert that the correct output is returned. For components and more complex functions it can get a bit hairy sometimes, but the idea your unit test code being concerned with the "edges" of your isolated system under test should guide you towards writing good unit tests.  
+
+### 5. Once The Unit Tests Pass, Circle Back To The Step Definitions 
+It's a great feeling when you have solid unit test coverage and a working new feature built. Great! At this point, it can be very to tempting to just merge that puppy into your CI deploying branch, but again just hold your horses! If we had wrote our failing step definitions perfectly previously then they would be passing now that our source code has been written with such bulletproof TDD style as to have considered _all_ the cases, right? hehe.
+
+### 6. Once All the Tests Are Passing, Your System Should Work!
+Assuming the external systems your application is interacting with are working properly, environment variables are set correctly, etc. then your feature should be deployed automatically by the continuous integration serevr automatically (be sure to replace the line in .travis.yml that says, "do your deploy commands here!" with the code for deploying to your hosting provider).
+
+### What To Do If Bugs Are Found!
+First of all, don't panic. If someone find a bug, the first step to describing it to others is to just give steps for recreating the bug. In the end say what actually happend, and the user should expect to happen. Notice how we said "should expect" there, and indeed it shouldn't be too difficult to turn these _user stories_ describing the correct behavior into one or more Scenarios that  would live in a feature file.
+
+## Unit Tests & End-To-End Tests: The Ying & Yang of Automated Testing
+It's very important to have BOTH the end-to-end UI tests and the unit tests because they really provide different purposes and really pick up for the weaknesses of the other. A suite of passing end-to-end tests that really thoroughly and correctly test your entire system can really give you a high level of confidence that that system should be working properly. However, when the cypress tests break they don't always give you a great deal of insight into _why_ the bug in happening and what in the code needs to be changed in order to fix it! Unit tests are in a way the reverse. Since unit tests are very focused and specific, a failure should give you exact line numbers in the code and show exactly the output in the code that was expected vs what was returned. As great essential as unit tests are for deploying with confidence, it seems that we can never _truly_ believe front-end applications are working properly, as a whole and from a user-perspective with just passing unit tests alone.
+
+
+### Cypress Is Great For UI Testing
+There are many UI automation libraries, and while I'm not going to trow out any names of clunky or frustrating to use ones, our team has really found working with Cypress, for the most part (and after some initial growing pains) to be a joy. The excellent auto-rerunning UI development environment, great api that is promise-based but but is abstract enough to where things just work properly and consistenly. For browser development in partcular, we definitely have found Cypress to be excellent! Another thing we like about Cypress is that it is completely agnotic to the front-end framework you use, yet it works with React extremely well!
+
+
+## A Word On "Chasing Hunnits" Aka What Not To Test
+Once you get familiar with unit testing you want to test everything, and sometimes you may feel the need to test everything just for the sake of testing everything. Sure, it's nice to look at fully green unit test code coverage reports (such as the one from Titanium Lambda), but in reality testing unit testing isn't always easy, it takes some time for you to sit down and really think about what's going on and ensure you are testing the right things (which is why having a pair partner there keeping you honest is so great). For example, in this project we chose not to write unit tests for the configuration files from `gatsby-default-starter` such as `seo.tsx` or `404.tsx`. 
+
+
+## ScreenShot Testing
+This propject does not include any screenshot testing. We believe that once your project is in a really solid state where the UI is pretty set, then some screenshot testing framework such as [percy.io](https://percy.io/) can be extremely useful in ensuring there are not regressions in css, layout, and other visual elements that are not really suited for testing with Cypress. We encourage you to experiment with whatever other types of automated testing you may find useful, but we would advise not to forgoe the base unit testing & cypress + cucumber testing we recommend here! 
+
+
+## Repaclacing PropTypes with TypeScript Interfaces
+We struggled for a while with trying to figure out how to speficy through React `propTypes` that some property was an instance of a TypeScript interface. Then after not finding a good solution and speaking to other engineers, we came to the conclusion that we prefered to use functional components that use TypeScript to define the types of the props instead of propTypes. This just overall made things easier, and the React propTypes don't really provide any extra information that can't be convyed arguably more cleanly with interfaces and so we figured keeping the propTypes would only be an unnecessary duplication and burden for reading and updating these props later.  
+
+
+### Disclaimer
+This project comes with the MIT open source license which means go and ahead and use it for your own commercial projects, but we ain't responsible for any possible bugs. ;)
+
+
+### Contributing To This Project
+We love feedback! Feel free to open issues or pull requests if you have any questions, difficulties, or ideas!
+
+
+## Gatsby Config Files
+
+**`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+
+6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+
+7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+
+8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+
+## Learning More About Gatsby
+
+Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+
+- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+
+- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+
+
+# From Scratch Setup Guide
+If you are interested in learning how this project was created or would like to be your own modified starter, we have document our steps as of the creating of this project below.
 
 This project was initally created with the [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default) project.
 ```
@@ -232,18 +292,22 @@ npm i --save-dev redux-localstorage-simple
 
 
 ### Custom Middleware Setup
-
+// TODO
 
 
 ### Localstorage Redux Integration
+// TODO
 
 
 
 ### Jest Configuration
+// TODO
 
 
 ### A Note On Visual Testing
+// TODO
 
 
 ### It Takes A Genius To Recognise Good Tests
+// TODO
 
