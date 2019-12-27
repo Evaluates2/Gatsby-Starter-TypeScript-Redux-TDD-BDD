@@ -1,5 +1,4 @@
 
-import PropTypes from 'prop-types';
 import React from 'react';
 import { ITodo } from '../../models/todo';
 
@@ -23,10 +22,6 @@ const Todo = ({ todo }: { todo: ITodo }) => {
             </p>
         </div>
     );
-};
-
-Todo.propTypes = {
-    todo: PropTypes.any,
 };
 
 export default Todo;

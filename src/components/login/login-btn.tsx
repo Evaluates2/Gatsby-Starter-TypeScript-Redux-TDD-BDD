@@ -1,5 +1,4 @@
 
-import PropTypes from 'prop-types';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { loginRequested, logout } from '../../state/actions/login';
@@ -49,14 +48,6 @@ const LoginBtn = ({ currentlyLoggedIn }:
             {currentlyLoggedIn ? 'Logout' : 'Login'}
         </button>
     );
-};
-
-LoginBtn.propTypes = {
-    currentlyLoggedIn: PropTypes.bool,
-};
-
-LoginBtn.defaultProps = {
-    currentlyLoggedIn: false,
 };
 
 export default LoginBtn;

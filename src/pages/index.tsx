@@ -7,6 +7,7 @@ import SEO from '../components/seo';
 import Todos from '../components/todos/todos';
 import PropTypes from 'prop-types';
 import LoginSection from '../components/login/login-section';
+import { ITodo } from '../models/todo';
 
 const imgStyle = { maxWidth: '300px', marginBottom: '1.45rem' };
 
@@ -16,7 +17,7 @@ const pStyle = {
   margin: '2px',
 };
 
-const IndexPage = ({ todos, userId }) => {
+const IndexPage = ({ todos, userId }: { todos: ITodo, userId: number }) => {
 
   return (
     <Layout>
@@ -38,11 +39,6 @@ const IndexPage = ({ todos, userId }) => {
 
     </Layout>
   );
-};
-
-IndexPage.propTypes = {
-  // userId: PropTypes.number,
-  // todos: PropTypes.arrayOf(new Todo({title:"", description:""}) )
 };
 
 const mapStateToProps = state => {
