@@ -4,7 +4,9 @@ import Todos from './todos';
 
 describe('Todos', () => {
 
-    it('should render without errors.', () => {
+    it('should renders todos data prop as a list of <Todo/> elements.', () => {
+
+        
 
         // renderer.create(<Todos todos={fakeTodos} />)
         //     .toJSON();

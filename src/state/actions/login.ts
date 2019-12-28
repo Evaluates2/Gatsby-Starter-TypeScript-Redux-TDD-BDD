@@ -10,7 +10,7 @@ export const loginSuccess = (userId: ILoginSuccess | ILoginError) => ({
   payload: { userId },
 });
 
-export const loginFailed = error => ({
+export const loginFailed = (error: Error) => ({
   type: LOGIN_FAILED,
   payload: error,
 });

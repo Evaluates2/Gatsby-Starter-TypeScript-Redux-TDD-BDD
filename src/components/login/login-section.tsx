@@ -10,7 +10,7 @@ const loginSectionStyle = {
 };
 
 // Treats the number 0 as an INVALID userId
-const LoginSection = ({ userId }: { userId: number }) => {
+const LoginSection = ({ userId }: ILoginSectionProps) => {
   return (
     <div id='login-section' style={loginSectionStyle}>
       <h2 id='userId-section'>User Id: {userId !== 0 && userId}</h2>
@@ -18,5 +18,9 @@ const LoginSection = ({ userId }: { userId: number }) => {
     </div>
   );
 };
+
+interface ILoginSectionProps {
+  userId: number | undefined;
+}
 
 export default LoginSection;

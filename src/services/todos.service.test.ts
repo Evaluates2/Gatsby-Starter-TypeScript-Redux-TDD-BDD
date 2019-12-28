@@ -5,6 +5,8 @@ describe("todosService", () => {
 
     it('should return a promise containing an object with a randomly generated number userId', async () => {
 
+        // TODO - hardcoded, but still - you should be mocking the calls here...
+
         // right now it's just hardedcoded to return some data
         const expectedResponseData = [
             {
