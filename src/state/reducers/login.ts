@@ -1,5 +1,11 @@
 import { LOGIN_FAILED, LOGIN_REQUESTED, LOGIN_SUCCESS, LOGOUT } from '../types/login';
 
+export interface ILoginState {
+  fetching: boolean,
+  error: object | null,
+  userId: number | null
+}
+
 export const initialState = {
   fetching: false,
   error: null,
@@ -11,7 +17,7 @@ interface IAction {
   payload?: any;
 }
 
-const reducer = (state = initialState, action: IAction = {}) => {
+const reducer = (state: ILoginState = initialState, action: IAction = {}): ILoginState => {
 
   const { type, payload } = action;
 
@@ -42,8 +48,6 @@ const reducer = (state = initialState, action: IAction = {}) => {
     case LOGOUT:
       return {
         ...state,
-        fetching: false,
-        error: payload,
         userId: null,
       };
 
