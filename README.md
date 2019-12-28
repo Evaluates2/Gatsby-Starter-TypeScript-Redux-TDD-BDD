@@ -7,15 +7,15 @@ An awesome Gatsby starter template project that takes care of the tooling setup,
 
 # Features
 
-  - [x] TypeScript pre-installed and all src files have been converted to TypeScript.
-  - [x] Redux preinstalled and with simple examples of actions, reducers, and types, and custom middlewares. 
-  - [x] Redux-devtools support preinstalled (For usage with Redux Dev Tools Chrome Extension)
-  - [x] Redux-localstorage-simple preinstalled (For automatic syncing of specified reducers to local storage)
-  - [x] Unit testing with Jest pre-configured and ready to go. 
-  - [x] End-to-end UI automation testing with Cypress pre-configured. 
-  - [x] Cucumber plugin preinstalled into Cypress to run gherkin features files and steps definitions for outside-in behavior-driven-development. 
-  - [x] Linting pre-configured with Prettier and TSLint.
-  - [x] Continuous integration & continuous deploy setup with Travis CI.
+ - [x] TypeScript pre-installed and all src files have been converted to TypeScript.
+ - [x] Redux preinstalled and with simple examples of actions, reducers, and types, and custom middlewares. 
+ - [x] Redux-devtools support preinstalled (For usage with Redux Dev Tools Chrome Extension)
+ - [x] Redux-localstorage-simple preinstalled (For automatic syncing of specified reducers to local storage)
+ - [x] Unit testing with Jest pre-configured and ready to go. 
+ - [x] End-to-end UI automation testing with Cypress pre-configured. 
+ - [x] Cucumber plugin preinstalled into Cypress to run gherkin features files and steps definitions for outside-in behavior-driven-development. 
+ - [x] Linting pre-configured with Prettier and TSLint.
+ - [x] Continuous integration & continuous deploy setup with Travis CI.
 
 
 # Usage
@@ -104,7 +104,7 @@ Even without writing any src code for the feature, you might be surprised how mu
 
 
 ### 4. Write The Implementation Code With "Classic TDD"
-After you write your failing step definitions it can be tempting you just write all the source code and get it working, but don't jump the gun! It's important to see your unit tests failing before you implement the code so that you can be confident you aren't just getting false-positive passing unit tests when writing them after the fact (this can be countered by occasionally purposely changing the source code and correctly guessing how the tests fail as a sanity check, but this is a slippery slope to start playing and in our experiences normally ends in sloppier tests). When we say "Classic TDD" we mean basically writing source code with unit tests in short red-green-refactor cycles. Write some failing bit, make it pass, and then refactor your code (and the beauty is you should instantly know by failing tests if you've accidentally broken the logic with your refactorings). In this project, we have chosen to use Jest for unit testing. This project provides some examples for testing redux-integrated components, shallow-rendering components, etc. We also provide examples for testing asynchronous services and testing all our various redux-related files. When unit testing, keep in mind to "test the edges" of whatever thing you are trying to test. For a pure function, write a test for each different input you can pass into it and assert that the correct output is returned. For components and more complex functions, it can get a bit hairy sometimes, but the idea is that your unit test code should be concerned with the "edges" of your isolated system under test should guide you towards writing good unit tests.  
+After you write your failing step definitions it can be tempting you just write all the source code and get it working, but don't jump the gun! It's important to see your unit tests failing before you implement the code so that you can be confident you aren't just getting false-positive passing unit tests when writing them after the fact (this can be countered by occasionally purposely changing the source code and correctly guessing how the tests fail as a sanity check, but this is a slippery slope to start playing and in our experiences normally ends in sloppier tests). When we say "Classic TDD" we mean basically writing source code with unit tests in short red-green-refactor cycles. Write some failing bit, make it pass, and then refactor your code (and the beauty is you should instantly know by failing tests if you've accidentally broken the logic with your refactorings). In this project, we have chosen to use Jest for unit testing. This project provides some examples for testing redux-integrated components, shallow-rendering components, etc. We also provide examples for testing asynchronous services and testing all our various redux-related files. When unit testing, keep in mind to "test the edges" of whatever thing you are trying to test. For a pure function, write a test for each different input you can pass into it and assert that the correct output is returned. For components and more complex functions, it can get a bit hairy sometimes, but the idea is that your unit test code should be concerned with the "edges" of your isolated system under test should guide you towards writing good unit tests. 
 
 ### 5. Once The Unit Tests Pass, Circle Back To The Step Definitions 
 It's a great feeling when you have solid unit test coverage and a working new feature built. Great! At this point, it can be very to tempting to just merge that puppy into your CI deploying branch, but again just hold your horses! If we had written our failing step definitions perfectly previously then they would be passing now that our source code has been written with such bulletproof TDD style as to have considered _all_ the cases, right? hehe.
@@ -128,11 +128,11 @@ Once you get familiar with unit testing you want to test everything, and sometim
 
 
 ## Screenshot Testing
-This project does not include any screenshot testing. We believe that once your project is in a really solid state where the UI is pretty set, then some screenshot testing framework such as [percy.io](https://percy.io/) can be extremely useful in ensuring there are not regressions in css, layout, and other visual elements that are not really suited for testing with Cypress. We encourage you to experiment with whatever other types of automated testing you may find useful, but we would advise not to forgo the base unit testing & cypress + cucumber testing we recommend here! 
+This project does not include any screenshot testing. We believe that once your project is in a really solid state where the UI is pretty set, then some screenshot testing framework such as [percy.io](https://percy.io/) can be extremely useful in ensuring there are no regressions in the CSS, layout, or other visual elements that are not particularly well suited for testing with Cypress. We encourage you to experiment with whatever other types of automated testing you may find useful, but we would advise not to forgo the base unit testing & cypress + cucumber testing we recommend here! 
 
 
 ## Replacing PropTypes with TypeScript Interfaces
-We struggled for a while with trying to figure out how to specify through React `propTypes` that some property was an instance of a TypeScript interface. Then after not finding a good solution and speaking to other engineers, we concluded that we preferred to use functional components that use TypeScript to define the types of the props instead of propTypes. This just overall made things easier, and the React propTypes don't really provide any extra information that can't be conveyed arguably more cleanly with interfaces and so we figured keeping the propTypes would only be an unnecessary duplication and burden for reading and updating these props later.  
+We struggled for a while with trying to figure out how to specify through React `propTypes` that some property was an instance of a TypeScript interface. Then after not finding a good solution and speaking to other engineers, we concluded that we preferred to use functional components that use TypeScript to define the types of the props instead of propTypes. This just overall made things easier, and the React propTypes don't really provide any extra information that can't be conveyed arguably more cleanly with interfaces and so we figured keeping the propTypes would only be an unnecessary duplication and burden for reading and updating these props later. 
 
 
 ## Disclaimer
@@ -147,11 +147,11 @@ We love feedback! Feel free to open issues or pull requests if you have any ques
 
 - **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
--  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+- **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
--  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+- **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
--  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+- **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
 ## Learning More About Gatsby
 
@@ -161,7 +161,6 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
-<br/>
 
 # From Scratch Setup Guide
 If you are interested in learning how this project was created or would like to be your own modified starter, we have documented our steps as of the creating of this project below.
@@ -180,8 +179,8 @@ npm install gatsby-plugin-typescript
 Included this in gatsby-config.js:
 ```
 module.exports = {
-  // ...,
-  plugins: [`gatsby-plugin-typescript`],
+ // ...,
+ plugins: [`gatsby-plugin-typescript`],
 }
 ```
 
@@ -209,7 +208,7 @@ Then replace cypress/plugins/index.js with this:
 var cucumber = require("cypress-cucumber-preprocessor").default
 
 module.exports = (on, config) => {
-  on("file:preprocessor", cucumber())
+ on("file:preprocessor", cucumber())
 };
 ```
 
@@ -226,7 +225,7 @@ To run in headless mode: `npm run cypress:run`
 Note, you can also ignore everything but the feature files by adding the option in cypress.json
 
 ## Adding Redux
-First, install the npm librarires for `gatsby-plugin-react-redux`, `react-redux`, and `redux`:
+First, install the npm libraries for `gatsby-plugin-react-redux`, `react-redux`, and `redux`:
 ```
 npm install --save gatsby-plugin-react-redux react-redux redux
 ```
@@ -236,39 +235,39 @@ Created a `./src/store/createStore.ts` file containing this:
 import { createStore } from 'redux';
 
 function reducer() {
-  //...
+ //...
 }
 
 // preloadedState will be passed in by the plugin
 export default preloadedState => {
-  return createStore(reducer, preloadedState);
+ return createStore(reducer, preloadedState);
 };
 ```
 
 And added this plugin to the list in `./gatsby-config.js`:
 ```
 module.exports = {
-  plugins: [
-    {
-      resolve: `gatsby-plugin-react-redux`,
-      options: {
-        // [required] - path to your createStore module
-        pathToCreateStoreModule: './src/state/createStore',
-        // [optional] - options passed to `serialize-javascript`
-        // info: https://github.com/yahoo/serialize-javascript#options
-        // will be merged with these defaults:
-        serialize: {
-          space: 0,
-          isJSON: true,
-          unsafe: false,
-        },
-      },
-    },
-  ],
+ plugins: [
+ {
+ resolve: `gatsby-plugin-react-redux`,
+ options: {
+ // [required] - path to your createStore module
+ pathToCreateStoreModule: './src/state/createStore',
+ // [optional] - options passed to `serialize-javascript`
+ // info: https://github.com/yahoo/serialize-javascript#options
+ // will be merged with these defaults:
+ serialize: {
+ space: 0,
+ isJSON: true,
+ unsafe: false,
+ },
+ },
+ },
+ ],
 };
 ```
 
-## Redux dev tools setup
+## Redux Dev Tools Setup
 First, install:
 ```
 npm install --save redux-devtools-extension
@@ -280,8 +279,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(reducer, composeWithDevTools(
-  applyMiddleware(...middleware),
-  // other store enhancers if any
+ applyMiddleware(...middleware),
+ // other store enhancers if any
 ));
 ```
 
@@ -294,28 +293,28 @@ npm i --save-dev redux-localstorage-simple
 Then change your createStore function to use _both_ gatsby's preloaded state and the slices of state you'd like to be automatically synced with localstorage:
 ```
 export default preloadedState => {
-  return createStore(
-    combinedReducers,
-    getLoadedState(preloadedState),
-    composeWithDevTools(
-      applyMiddleware(
-        save({ states: ['loginReducer'] }),
-        someCustomMiddleware(),
-      )
-    ),
+ return createStore(
+ combinedReducers,
+ getLoadedState(preloadedState),
+ composeWithDevTools(
+ applyMiddleware(
+ save({ states: ['loginReducer'] }),
+ someCustomMiddleware(),
+ )
+ ),
 
-  );
+ );
 };
 
 const getLoadedState = (preloadedState) => {
-  if (typeof window !== 'undefined')
-    return {
-      ...preloadedState,
-      ...load({ states: ['loginReducer'], disableWarnings: true }),
-    }
-  return {
-    ...preloadedState,
-  }
+ if (typeof window !== 'undefined')
+ return {
+ ...preloadedState,
+ ...load({ states: ['loginReducer'], disableWarnings: true }),
+ }
+ return {
+ ...preloadedState,
+ }
 }
 ```
 
@@ -323,21 +322,21 @@ const getLoadedState = (preloadedState) => {
 ## Custom Middleware Setup
 After developing React applications for a while, most engineers will agree that the code for asynchronous calls should not live inside of any individual component. A "middleware" is a great place to put asynchronous code because it sits right in between the components and the redux state. In a nutshell, the way it works is that components (or other redux-connected services) dispatch an action for triggering the action call, which is handled by the middleware, and when the middleware's async operation finishes a corresponding success or failure Redux action is then dispatched with the payload. This project provides an example of a custom middleware and unit tests so that you can hit the ground running with clean management of asynchronous operations in your projects.
 
-Custom middlewares can be added to a project relatively easily by adding it as an argument of "applyMiddleware" in your createStore function. Here's an example of how we can add "todosCustomMiddleware" and "loginCustomMiddleware" so that they can intercept and dispatch Redux actions to your application's  Redux store.
+Custom middlewares can be added to a project relatively easily by adding it as an argument of "applyMiddleware" in your `createStore` function. Here's an example of how we can add "todosCustomMiddleware" and "loginCustomMiddleware" so that they can intercept and dispatch Redux actions to your application's Redux store.
 
 ```
-  return createStore(
-    combinedReducers,
-    getLoadedState(preloadedState),
-    composeWithDevTools(
-      applyMiddleware(
-        save({ states: ['loginReducer'] }),
-        todosCustomMiddleware(),
-        loginCustomMiddleware()
-      )
-    ),
+ return createStore(
+ combinedReducers,
+ getLoadedState(preloadedState),
+ composeWithDevTools(
+ applyMiddleware(
+ save({ states: ['loginReducer'] }),
+ todosCustomMiddleware(),
+ loginCustomMiddleware()
+ )
+ ),
 
-  );
+ );
 ```
 
 
@@ -347,46 +346,45 @@ Configuring jest correctly with typescript was a bit of a struggle. One gotcha f
 ```
 module.exports = {
 
-  transform: {
-    "^.+\\.[jt]sx?$": "<rootDir>/jest-preprocess.js",
-  },
-  moduleNameMapper: {
-    ".+\\.(css|styl|less|sass|scss)$": `identity-obj-proxy`,
-    ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": `<rootDir>/__mocks__/file-mock.js`,
-  },
-  testPathIgnorePatterns: [`node_modules`, `.cache`, `public`],
-  transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
-  globals: {
-    __PATH_PREFIX__: ``,
-  },
-  testURL: `http://localhost`,
-  setupFiles: [`<rootDir>/loadershim.js`],
-  collectCoverageFrom: [
-    "**/*.{ts,tsx}",
-    "!**/node_modules/**"
-  ],
-  collectCoverage: true,
-  coverageDirectory: 'coverage',
-  preset: "ts-jest",
-  moduleFileExtensions: [
-    "js",
-    "jsx",
-    "ts",
-    "tsx"
-  ]
+ transform: {
+ "^.+\\.[jt]sx?$": "<rootDir>/jest-preprocess.js",
+ },
+ moduleNameMapper: {
+ ".+\\.(css|styl|less|sass|scss)$": `identity-obj-proxy`,
+ ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": `<rootDir>/__mocks__/file-mock.js`,
+ },
+ testPathIgnorePatterns: [`node_modules`, `.cache`, `public`],
+ transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
+ globals: {
+ __PATH_PREFIX__: ``,
+ },
+ testURL: `http://localhost`,
+ setupFiles: [`<rootDir>/loadershim.js`],
+ collectCoverageFrom: [
+ "**/*.{ts,tsx}",
+ "!**/node_modules/**"
+ ],
+ collectCoverage: true,
+ coverageDirectory: 'coverage',
+ preset: "ts-jest",
+ moduleFileExtensions: [
+ "js",
+ "jsx",
+ "ts",
+ "tsx"
+ ]
 }
 ```
 
 and a `jest.preprocess.js` file:
 ```
 const babelOptions = {
-    presets: ["babel-preset-gatsby", "@babel/preset-typescript"],
+ presets: ["babel-preset-gatsby", "@babel/preset-typescript"],
 }
 
 module.exports = require("babel-jest").createTransformer(babelOptions)
 ```
 
-
-
-
+## Adding Travis CI
+Now that you have all of these automated tests checking that the application id working properly, wouldn't it be awesome if when you pushed or merged to specific git branches that the tests were run, and if every passed then a fresh build was made and deployed to dev for you? Well, that's basically what adding continuous integration and continuous deployment (CI / CD) is all about! You can use any continuous integration system you like. We chose TravisCI for this project simply because it is extremely easy to use and totally free for public Github repositories. All you need to do to add travis CI to your repo is go to the TravisCI repositories page linked with your GitHub account and click the toggle button on to "activate" the repository. Then simply add a `.travis.yml` file in the root of your project, and you're done! This project contains a sample Travis configuration file with commented sections for you to enter the command for deploying your project. In general, git-triggered deploys should go to your first and most bleeding-edge environment, often named "dev". This will then usually be manually tested and approved to the next environment one or more times. The final environment is often called "prod" or "production" and refers to the one environment that the end-users actually use.
 
