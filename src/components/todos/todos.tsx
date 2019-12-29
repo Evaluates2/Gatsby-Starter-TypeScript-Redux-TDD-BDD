@@ -10,13 +10,12 @@ const containerStyle = {
   backgroundColor: 'papayawhip',
 };
 
-const Todos = ({ todos }: { todos: { data: ITodo[] } }) => {
-  const todosData = todos.data;
+const Todos = ({ todos }: { todos: ITodo[] }) => {
 
   return (
     <div style={containerStyle}>
-      {todosData &&
-        todosData.map((todo, i) => {
+      {todos &&
+        todos.map((todo, i) => {
           return <Todo todo={todo} key={'key' + i} />;
         })}
     </div>

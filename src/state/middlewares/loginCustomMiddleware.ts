@@ -1,4 +1,3 @@
-
 import { TODOS_REQUESTED } from '../types/todos';
 import loginService, { ILoginSuccess, ILoginError } from '../../services/simple-login.service';
 import { todosSuccess, todosFailed } from '../actions/todos';
@@ -17,7 +16,7 @@ export interface MiddlewareTodoParams<S> {
 }
 
 const loginCustomMiddleware = () => {
-  return (store: MiddlewareAPI<any>) => (next: Dispatch<any>)=> async (action: AnyAction) => {
+  return (store: MiddlewareAPI<any>) => (next: Dispatch<any>) => async (action: AnyAction) => {
     switch (action.type) {
 
       case LOGIN_REQUESTED:

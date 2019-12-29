@@ -1,10 +1,10 @@
 import { ITodo } from '../models/todo';
 
-interface ITodosSuccess {
+export interface ITodosSuccess {
     data: ITodo[];
 }
 
-interface ITodosError {
+export interface ITodosError {
     error: any;
 }
 
@@ -29,5 +29,6 @@ const todosService = (): Promise<ITodosSuccess | ITodosError> => {
 
     });
 };
+
 
 export default todosService;

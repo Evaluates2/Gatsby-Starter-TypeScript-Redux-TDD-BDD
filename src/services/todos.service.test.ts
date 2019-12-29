@@ -5,9 +5,11 @@ describe("todosService", () => {
 
     it('should return a promise containing an object with a randomly generated number userId', async () => {
 
-        // TODO - hardcoded, but still - you should be mocking the calls here...
+        /**
+         *  In general, mock any dependencies of the system udner test.
+         *  See the simple-login.service.ts tests for "jest.mock" examples.
+         **/ 
 
-        // right now it's just hardedcoded to return some data
         const expectedResponseData = [
             {
                 id: 1,

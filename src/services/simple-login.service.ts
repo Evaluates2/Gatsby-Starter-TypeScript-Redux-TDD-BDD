@@ -1,28 +1,29 @@
+import { asyncLoginFunction } from './async-login-function'
 
-interface ILoginParams {
+export interface ILoginParams {
     name?: string;
     password?: string;
 }
 
 export interface ILoginSuccess {
-    data: any;
+    data: {
+        id: number;
+    }
 }
 
 export interface ILoginError {
     error: any;
 }
 
-const loginService = (params: ILoginParams = {}): Promise<ILoginSuccess | ILoginError> => {
+const loginService = async (params: ILoginParams = {}): Promise<(ILoginSuccess | ILoginError)> => {
 
-    return new Promise((resolve, reject) => {
-
-        resolve({
-            data: {
-                id: Math.floor(Math.random() * 10000),
-            },
-        });
-
-    });
+    try {
+        return await asyncLoginFunction(params)
+    }
+    catch (err) {
+        return err
+    }
+   
 };
 
 export default loginService;

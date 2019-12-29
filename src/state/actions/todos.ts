@@ -5,10 +5,10 @@ export const todosRequested = () => ({
   type: TODOS_REQUESTED,
 });
 
-export const todosSuccess = (todos: ITodo[]) => {
+export const todosSuccess = (todosData: { data: ITodo[] }) => {
   return {
     type: TODOS_SUCCESS,
-    payload: todos,
+    payload: todosData.data,
   };
 
 };

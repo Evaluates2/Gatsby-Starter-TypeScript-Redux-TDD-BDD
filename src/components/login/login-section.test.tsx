@@ -26,65 +26,65 @@ describe('LoginSection', () => {
 
         });
 
-        // it('should pass "true" to LoginBtn when userId is not null.', () => {
+        it('should pass "true" to LoginBtn when userId is not null.', () => {
 
-        //     const shallowRenderer = new ShallowRenderer();
-        //     shallowRenderer.render(<LoginSection userId={1} />);
-        //     const shallowResult = shallowRenderer.getRenderOutput();
+            const shallowRenderer = ShallowRenderer.createRenderer();
+            shallowRenderer.render(<LoginSection userId={1} />);
+            const shallowResult = shallowRenderer.getRenderOutput();
 
-        //     expect(shallowResult.props.children).toContainEqual(
-        //         <LoginBtn currentlyLoggedIn={true} />,
-        //     );
+            expect(shallowResult.props.children).toContainEqual(
+                <LoginBtn currentlyLoggedIn={true} />,
+            );
 
-        // });
+        });
 
-        // it('should pass "false" to LoginBtn when userId is NaN.', () => {
+        it('should pass "false" to LoginBtn when userId is NaN.', () => {
 
-        //     const shallowRenderer = new ShallowRenderer();
-        //     shallowRenderer.render(<LoginSection userId={NaN} />);
-        //     const shallowResult = shallowRenderer.getRenderOutput();
+            const shallowRenderer = ShallowRenderer.createRenderer();
+            shallowRenderer.render(<LoginSection userId={NaN} />);
+            const shallowResult = shallowRenderer.getRenderOutput();
 
-        //     expect(shallowResult.props.children).toContainEqual(
-        //         <LoginBtn currentlyLoggedIn={false} />,
-        //     );
+            expect(shallowResult.props.children).toContainEqual(
+                <LoginBtn currentlyLoggedIn={false} />,
+            );
 
-        // });
+        });
 
-        // it('should work fine with negative numbers.', () => {
+        it('should work fine with negative numbers.', () => {
 
-        //     const shallowRenderer = new ShallowRenderer();
-        //     shallowRenderer.render(<LoginSection userId={-5} />);
-        //     const shallowResult = shallowRenderer.getRenderOutput();
+            const shallowRenderer = ShallowRenderer.createRenderer();
+            shallowRenderer.render(<LoginSection userId={-5} />);
+            const shallowResult = shallowRenderer.getRenderOutput();
 
-        //     expect(shallowResult.props.children).toContainEqual(
-        //         <LoginBtn currentlyLoggedIn={true} />,
-        //     );
+            expect(shallowResult.props.children).toContainEqual(
+                <LoginBtn currentlyLoggedIn={true} />,
+            );
 
-        // });
+        });
 
-        // it('should pass "false" to LoginBtn when userId is 0.', () => {
+        it('should pass "false" to LoginBtn when userId is 0.', () => {
 
-        //     const shallowRenderer = new ShallowRenderer();
-        //     shallowRenderer.render(<LoginSection userId={0} />);
-        //     const shallowResult = shallowRenderer.getRenderOutput();
+            const shallowRenderer = ShallowRenderer.createRenderer();
+            shallowRenderer.render(<LoginSection userId={0} />);
+            const shallowResult = shallowRenderer.getRenderOutput();
 
-        //     expect(shallowResult.props.children).toContainEqual(
-        //         <LoginBtn currentlyLoggedIn={false} />,
-        //     );
+            expect(shallowResult.props.children).toContainEqual(
+                <LoginBtn currentlyLoggedIn={false} />,
+            );
 
-        // });
+        });
 
-        // it('should pass "true" to LoginBtn when userId is a big number.', () => {
+        it('should pass "true" to LoginBtn when userId is a big number.', () => {
 
-        //     const shallowRenderer = new ShallowRenderer();
-        //     shallowRenderer.render(<LoginSection userId={999999999999999} />);
-        //     const shallowResult = shallowRenderer.getRenderOutput();
+            const shallowRenderer = ShallowRenderer.createRenderer();
+            shallowRenderer.render(<LoginSection userId={999999999999999} />);
+            const shallowResult = shallowRenderer.getRenderOutput();
 
-        //     expect(shallowResult.props.children).toContainEqual(
-        //         <LoginBtn currentlyLoggedIn={true} />,
-        //     );
+            expect(shallowResult.props.children).toContainEqual(
+                <LoginBtn currentlyLoggedIn={true} />,
+            );
 
-        // });
+        });
 
     });
 
@@ -122,7 +122,7 @@ describe('LoginSection', () => {
                 }
             });
 
-            expect(tree?.children?.length).toBeGreaterThan(1)
+            expect(tree?.children?.length).toBeGreaterThan(1);
 
         });
 
@@ -144,7 +144,7 @@ describe('LoginSection', () => {
                 }
             });
 
-            expect(tree?.children?.length).toBeGreaterThan(1)
+            expect(tree?.children?.length).toBeGreaterThan(1);
 
         });
 
@@ -166,7 +166,7 @@ describe('LoginSection', () => {
                 }
             });
 
-            expect(tree?.children?.length).toBeGreaterThan(1)
+            expect(tree?.children?.length).toBeGreaterThan(1);
 
         });
 
@@ -188,7 +188,7 @@ describe('LoginSection', () => {
                 }
             });
 
-            expect(tree?.children?.length).toBeGreaterThan(1)
+            expect(tree?.children?.length).toBeGreaterThan(1);
 
         });
 

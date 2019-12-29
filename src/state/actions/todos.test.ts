@@ -22,12 +22,14 @@ describe('todos actions', () => {
             }
         ]
 
+        const fakeTodoPayload = { data : fakeTodos }
+
         const expectedResponse = {
             type: TODOS_SUCCESS,
             payload: fakeTodos
         }
 
-        expect(todosSuccess(fakeTodos)).toEqual(expectedResponse)
+        expect(todosSuccess(fakeTodoPayload)).toEqual(expectedResponse)
 
     })
 
