@@ -3,7 +3,7 @@
 
 An awesome Gatsby starter template project that takes care of the tooling setup, allowing you and your team to dive right into building ultra-fast React applications with test-driven _and_ behavior-driven development!
 
-[![Build Status](https://api.travis-ci.org/JimTheMan/Gatsby-Starter-TypeScript-Redux-TDD-BDD.svg?branch=master)](https://travis-ci.org/JimTheMan/Gatsby-Starter-TypeScript-Redux-TDD-BDD)
+[![Build Status](https://api.travis-ci.org/Evaluates2/Gatsby-Starter-TypeScript-Redux-TDD-BDD.svg?branch=master)](https://travis-ci.org/Evaluates2/Gatsby-Starter-TypeScript-Redux-TDD-BDD)
 
 # Features
 
@@ -23,7 +23,7 @@ You can scaffold out a fresh new gatsby project use this template with the gatsb
 
 This will create, in the current directory, a new folder named `my-cool-react-project` containing a fresh scaffold of this starter.
 ```
-gatsby new my-cool-react-project https://github.com/JimTheMan/Gatsby-Starter-TypeScript-Redux-TDD-BDD
+gatsby new my-cool-react-project https://github.com/Evaluates2/Gatsby-Starter-TypeScript-Redux-TDD-BDD
 ```
 
 Then navigate into your snazzy new project, and you're ready to go!
