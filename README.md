@@ -139,6 +139,31 @@ This project does not include any screenshot testing. We believe that once your 
 We struggled for a while with trying to figure out how to specify through React `propTypes` that some property was an instance of a TypeScript interface. Then after not finding a good solution and speaking to other engineers, we concluded that we preferred to use functional components that use TypeScript to define the types of the props instead of propTypes. This just overall made things easier, and the React propTypes don't really provide any extra information that can't be conveyed arguably more cleanly with interfaces and so we figured keeping the propTypes would only be an unnecessary duplication and burden for reading and updating these props later. 
 
 
+## Please Don't Ask For A JavaScript Version
+Here at Evaluates2 we really love TypeScript a lot. We believe that everyone _should want_ to use TypeScript over JavaScript so that those reader your code later (possibly your future-self!) can see explicitly the types of the object that are being passed around rather than having ONLY the names of the variables being passed around. TypeScript allows your editor to be more helpful, and it allows for easy (ctrl + click-on-the-type) navigation to different files. With this said, moving from JavaScript to TypeScript will not be all unicorns and rainbows. Understanding the literally thousands of TypeScript rules as and what the complaining TypeScript compiler wants from you can be a frustrating promise, but we firmly believe that once you cross that hump of learning and appreciate explicitlness and power of TypeScript, you'll never want to go back.
+
+
+## Deployment Guides
+The beautiful thing about Gatsby building your site down to just static files is that your final build can be deployed relatively easily to any static file hosting provider. Some popular methods of hosting this site:
+
+- ### Github Pages 
+    [Deploying Gatsby to Github Pages docs]()
+
+    Netlify is a pretty big name in the Gatsby community and has won over made
+    A free thing
+
+- ### AWS S3 
+    [Deploying Gatsby to AWS docs]()
+
+    Netlify is a pretty big name in the Gatsby community and has won over made
+    A free thing
+
+- ### Netlify
+    [Deploying Gatsby to Netlify docs]()
+    
+    Netlify is a pretty big name in the Gatsby community and has won over made
+
+
 ## Disclaimer
 This project comes with the MIT open source license which means go and ahead and use it for your own commercial projects, but we ain't responsible for any possible bugs. ;)
 
@@ -391,4 +416,3 @@ module.exports = require("babel-jest").createTransformer(babelOptions)
 
 ## Adding Travis CI
 Now that you have all of these automated tests checking that the application id working properly, wouldn't it be awesome if when you pushed or merged to specific git branches that the tests were run, and if every passed then a fresh build was made and deployed to dev for you? Well, that's basically what adding continuous integration and continuous deployment (CI / CD) is all about! You can use any continuous integration system you like. We chose TravisCI for this project simply because it is extremely easy to use and totally free for public Github repositories. All you need to do to add travis CI to your repo is go to the TravisCI repositories page linked with your GitHub account and click the toggle button on to "activate" the repository. Then simply add a `.travis.yml` file in the root of your project, and you're done! This project contains a sample Travis configuration file with commented sections for you to enter the command for deploying your project. In general, git-triggered deploys should go to your first and most bleeding-edge environment, often named "dev". This will then usually be manually tested and approved to the next environment one or more times. The final environment is often called "prod" or "production" and refers to the one environment that the end-users actually use.
-

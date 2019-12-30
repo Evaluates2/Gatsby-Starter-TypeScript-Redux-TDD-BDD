@@ -22,7 +22,6 @@ before_script:
   - echo do pre-scripts things here...
 
 script:
-
   ## Run unit tests
   - npm run test-once
 
@@ -37,9 +36,17 @@ after_script:
 after_success:
   - npm run build
 
-# - do your deploy commands here!
-  
+  # - do your deploy commands here!
   - echo Welp, that's another happy CI deploy!
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  on:
+    branch: v1.0.1-release
+
 matrix:
   fast_finish: true
 
