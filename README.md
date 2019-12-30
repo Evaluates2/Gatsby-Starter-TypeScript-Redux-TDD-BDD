@@ -147,21 +147,20 @@ Here at Evaluates2 we really love TypeScript a lot. We believe that everyone _sh
 The beautiful thing about Gatsby building your site down to just static files is that your final build can be deployed relatively easily to any static file hosting provider. Some popular methods of hosting this site:
 
 - ### Github Pages 
-    [Deploying Gatsby to Github Pages docs]()
+    [Deploying Gatsby to Github Pages docs](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/)
 
-    Netlify is a pretty big name in the Gatsby community and has won over made
-    A free thing
+    GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website. It is 100% free for public github repositories, and you can even bring your own custom domain name!
 
 - ### AWS S3 
-    [Deploying Gatsby to AWS docs]()
+    [Gatsby Docs Deploying AWS (S3/Cloudfront)](https://www.gatsbyjs.org/docs/deploying-to-s3-cloudfront/)
 
-    Netlify is a pretty big name in the Gatsby community and has won over made
-    A free thing
+    Amazon Web Services (AWS) is often seen as the largest and most mature cloud provider and is an excellent choice for an enterprise of any size. A gatsby site can be host via aws by uploading the fiels to an "S3 Bucket", using "Cloudfront" to the then make it publicly available, and "Route 53" to use a custom domain.  
 
-- ### Netlify
-    [Deploying Gatsby to Netlify docs]()
+
+- ### 12+ Provider-Specific Guides in Gatsby Docs!
+    [Gatsby Docs - Deploying and Hosting](https://www.gatsbyjs.org/docs/deploying-and-hosting/)
     
-    Netlify is a pretty big name in the Gatsby community and has won over made
+    The Gatsby documentation provides a list of some great guides on deploying to various hosting platforms. Your Gatsby site should look and work excellently on any hosting platform, and with everything automated through CI you shouldn't really be spending much time thinking about the hosting implementation details anyway. In the end, you should just use whatever platform is most familiar to your team. If you aren't familiar with anything that Github Pages, AWS, and the recommended platforms in the Gatsby guides are _all_ safe bets. 
 
 
 ## Disclaimer
