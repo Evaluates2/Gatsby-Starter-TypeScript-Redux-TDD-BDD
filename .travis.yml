@@ -44,6 +44,7 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: dist
+  edge: true
   on:
     branch: v1.0.1-release
 
