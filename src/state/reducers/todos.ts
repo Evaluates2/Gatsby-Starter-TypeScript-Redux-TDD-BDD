@@ -3,13 +3,13 @@ import { ITodo } from '../../models/todo';
 
 export interface ITodosState {
   fetching: boolean,
-  error: object | null,
-  todos: ITodo | null
+  error: object | undefined,
+  todos: ITodo[] | undefined
 }
 
 export const initialState = {
   fetching: false,
-  error: null,
+  error: undefined,
   todos: [],
 };
 
@@ -27,14 +27,14 @@ const reducer = (state = initialState, action: IAction = {}) => {
       return {
         ...state,
         fetching: true,
-        error: null,
+        error: undefined,
       };
 
     case TODOS_SUCCESS:
       return {
         ...state,
         fetching: false,
-        error: null,
+        error: undefined,
         todos: payload,
       };
 

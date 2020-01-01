@@ -1,14 +1,10 @@
 import React from 'react';
-import renderer, { ReactTestRendererNode, ReactTestRendererJSON } from 'react-test-renderer';
+import renderer from 'react-test-renderer';
 import LoginBtn from './login-btn';
 import { Provider } from 'react-redux';
 import configureMockStore, { MockStoreEnhanced } from 'redux-mock-store';
 import LoginSection from './login-section';
 import ShallowRenderer from 'react-test-renderer/shallow';
-
-// ShallowRenderer.createRenderer();
-import { MiddlewareAPI, AnyAction } from 'redux';
-import { Store } from 'gatsby';
 
 describe('LoginSection', () => {
 
@@ -98,8 +94,8 @@ describe('LoginSection', () => {
             store = mockStore({
                 loggedInReducer: {
                     fetching: false,
-                    error: null,
-                    userId: null,
+                    error: undefined,
+                    userId: undefined,
                 },
             });
 
@@ -159,7 +155,7 @@ describe('LoginSection', () => {
                 )
                 .toJSON();
 
-            tree?.children?.forEach( (child: any) => {
+            tree?.children?.forEach((child: any) => {
                 if (child.type === 'h2') {
                     expect(child.children[0]).toEqual('User Id: ');
                     expect(child.children[1]).toEqual(undefined);
@@ -181,7 +177,7 @@ describe('LoginSection', () => {
                 )
                 .toJSON();
 
-            tree?.children?.forEach( (child: any) => {
+            tree?.children?.forEach((child: any) => {
                 if (child.type === 'h2') {
                     expect(child.children[0]).toEqual('User Id: ');
                     expect(parseInt(child.children[1], 10)).toEqual(fakeUserId);

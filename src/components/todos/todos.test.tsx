@@ -1,20 +1,8 @@
-
-import renderer from 'react-test-renderer';
-import Todos from './todos';
-
 import React from 'react';
-// import renderer, { ReactTestRendererNode, ReactTestRendererJSON } from 'react-test-renderer';
-import LoginBtn from './../../components/login/login-btn';
-import { Provider } from 'react-redux';
-import configureMockStore, { MockStoreEnhanced } from 'redux-mock-store';
-// import LoginSection from './login-section';
 import ShallowRenderer from 'react-test-renderer/shallow';
-
-// ShallowRenderer.createRenderer();
-import { MiddlewareAPI, AnyAction } from 'redux';
-import { Store } from 'gatsby';
-import Todo from './todo';
 import { ITodo } from '../../models/todo';
+import Todos from './todos';
+import Todo from './todo';
 
 describe('Todos', () => {
 

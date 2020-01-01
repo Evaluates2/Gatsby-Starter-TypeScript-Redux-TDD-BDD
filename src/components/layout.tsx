@@ -12,10 +12,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
 import './layout.css';
-import { IProduct, Product } from '../models/product';
 import { todosRequested } from '../state/actions/todos';
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: { children: any }) => {
 
   const dispatch = useDispatch();
 
@@ -69,5 +68,4 @@ const Layout = ({ children }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
 export default Layout;

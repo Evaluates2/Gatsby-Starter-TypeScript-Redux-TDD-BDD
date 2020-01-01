@@ -2,13 +2,10 @@
 
 name: Bug report
 about: Create a report to help us improve
-title: ""
-labels: ""
-assignees: ""
-
----
-
-name: Bug report
+title: ''
+labels: ''
+assignees: ''
+---name: Bug report
 about: Create a report to help us improve
 
 ---<!-- Please don't delete this template because we'll close your issue -->

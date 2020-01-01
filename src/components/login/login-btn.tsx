@@ -26,7 +26,7 @@ const LogoutBtnStyle = {
 };
 
 const LoginBtn = ({ currentlyLoggedIn }:
-     { currentlyLoggedIn: boolean}) => {
+    { currentlyLoggedIn: boolean }) => {
 
     const dispatch = useDispatch();
 
@@ -43,7 +43,7 @@ const LoginBtn = ({ currentlyLoggedIn }:
             ...BtnStyle,
             ...(currentlyLoggedIn ? LogoutBtnStyle : LoginBtnStyle),
         }}
-        onClick={event => { currentlyLoggedIn ? logoutClicked() : loginClicked(); }}
+            onClick={event => { currentlyLoggedIn ? logoutClicked() : loginClicked(); }}
         >
             {currentlyLoggedIn ? 'Logout' : 'Login'}
         </button>

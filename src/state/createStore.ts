@@ -7,7 +7,7 @@ import loginCustomMiddleware from './middlewares/loginCustomMiddleware';
 import { ILoginState } from './reducers/login';
 import { ITodosState } from './reducers/todos';
 
-interface IState {
+export interface IState {
   loginReducer: ILoginState,
   todosReducer: ITodosState
 }
