@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { loginRequested, logout } from '../../state/actions/login';
@@ -48,6 +47,7 @@ const LoginBtn = ({ currentlyLoggedIn }:
             {currentlyLoggedIn ? 'Logout' : 'Login'}
         </button>
     );
+
 };
 
 export default LoginBtn;

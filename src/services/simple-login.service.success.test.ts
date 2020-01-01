@@ -1,4 +1,3 @@
-
 const mockSuccessResponse = {
     data: {
         id: 42,
@@ -19,7 +18,6 @@ jest.mock('./async-login-function', () => {
 })
 
 import loginService from './simple-login.service'
-
 
 describe("loginService", () => {
 

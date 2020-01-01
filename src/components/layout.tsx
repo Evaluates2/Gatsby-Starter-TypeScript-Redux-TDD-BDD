@@ -9,7 +9,6 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-
 import Header from './header';
 import './layout.css';
 import { todosRequested } from '../state/actions/todos';
@@ -20,9 +19,9 @@ const Layout = ({ children }: { children: any }) => {
 
   useEffect(() => {
 
-     //  This is an example of doing things when the app first loads.
-     //  You can dispatch a Redux action here to do some async thing
-     //  when the webapp boots up.
+    //  This is an example of doing things when the app first loads.
+    //  You can dispatch a Redux action here to do some async thing
+    //  when the webapp boots up.
 
     dispatch(todosRequested());
 
@@ -68,4 +67,5 @@ const Layout = ({ children }: { children: any }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
 export default Layout;

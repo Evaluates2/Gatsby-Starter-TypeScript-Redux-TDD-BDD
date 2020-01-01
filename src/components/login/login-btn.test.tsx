@@ -7,6 +7,7 @@ import { LOGIN_REQUESTED, LOGOUT } from '../../state/types/login';
 import { AnyAction } from 'redux';
 
 describe('LoginBtn', () => {
+    
     describe('Rendering label of the LoginBtn component (either Login or Logout) properly based on props', () => {
 
         let mockStore;
@@ -56,6 +57,7 @@ describe('LoginBtn', () => {
         let mockStore;
         let store: MockStoreEnhanced<unknown, {}>;
         let mockDispatch: Dispatch<AnyAction>;
+        
         beforeEach(() => {
             mockStore = configureMockStore();
 
@@ -112,4 +114,5 @@ describe('LoginBtn', () => {
         });
 
     });
+    
 });
