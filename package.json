@@ -3,7 +3,23 @@
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jim Lynch <jim.lynch@evaluates2.com>",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "tslint": "tslint \"src/**/*.ts[x]\" --fix",
+    "lint": "npm run format && npm run tslint",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "jest --watch",
+    "test-once": "jest  --coverage",
+    "e2e": "node_modules/.bin/cypress open",
+    "e2e-headless": "node_modules/.bin/cypress run",
+    "deploy-gh": "git push origin :gh-pages && git subtree push --prefix public/ origin gh-pages",
+    "deploy-s3": "gatsby-plugin-s3 deploy --yes"
+  },
   "dependencies": {
     "@types/jest": "^24.0.24",
     "@types/react-helmet": "^5.0.14",
@@ -49,22 +65,6 @@
     "gatsby"
   ],
   "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "tslint": "tslint \"src/**/*.ts[x]\" --fix",
-    "lint": "npm run format && npm run tslint",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "jest --watch",
-    "test-once": "jest  --coverage",
-    "e2e": "node_modules/.bin/cypress open",
-    "e2e-headless": "node_modules/.bin/cypress run",
-    "deploy-gh": "git push origin :gh-pages && git subtree push --prefix public/ origin gh-pages",
-    "deploy-s3": "gatsby-plugin-s3 deploy --yes"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
