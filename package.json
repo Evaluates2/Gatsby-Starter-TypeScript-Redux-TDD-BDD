@@ -61,7 +61,9 @@
     "test": "jest --watch",
     "test-once": "jest  --coverage",
     "e2e": "node_modules/.bin/cypress open",
-    "e2e-headless": "node_modules/.bin/cypress run"
+    "e2e-headless": "node_modules/.bin/cypress run",
+    "deploy-gh": "git push origin :gh-pages && git subtree push --prefix public/ origin gh-pages",
+    "deploy-s3": "gatsby-plugin-s3 deploy --yes"
   },
   "repository": {
     "type": "git",
