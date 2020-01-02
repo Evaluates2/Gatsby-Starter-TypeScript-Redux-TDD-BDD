@@ -16,8 +16,8 @@ export class Product implements IProduct {
     constructor(
         public id: number = (Math.floor(Math.random() * 1000)),
         public name: string = '?',
-        public price: number = null,
+        public price: number = 0,
         public inventory: number = 0,
-        public discounts: IDiscount = null) { }
+        public discounts: IDiscount ) { }
 
 }

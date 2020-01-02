@@ -2,14 +2,14 @@ import { LOGIN_FAILED, LOGIN_REQUESTED, LOGIN_SUCCESS, LOGOUT } from '../types/l
 
 export interface ILoginState {
   fetching: boolean,
-  error: object | null,
-  userId: number | null
+  error: object | undefined,
+  userId: number | undefined
 }
 
 export const initialState = {
   fetching: false,
-  error: null,
-  userId: null,
+  error: undefined,
+  userId: undefined,
 };
 
 interface IAction {
@@ -26,8 +26,8 @@ const reducer = (state: ILoginState = initialState, action: IAction = {}): ILogi
       return {
         ...state,
         fetching: true,
-        error: null,
-        userId: null,
+        error: undefined,
+        userId: undefined,
       };
 
     case LOGIN_SUCCESS:
@@ -35,7 +35,7 @@ const reducer = (state: ILoginState = initialState, action: IAction = {}): ILogi
         ...state,
         userId: payload.userId.data.id,
         fetching: false,
-        error: null,
+        error: undefined,
       };
 
     case LOGIN_FAILED:
@@ -48,7 +48,7 @@ const reducer = (state: ILoginState = initialState, action: IAction = {}): ILogi
     case LOGOUT:
       return {
         ...state,
-        userId: null,
+        userId: undefined,
       };
 
     default:

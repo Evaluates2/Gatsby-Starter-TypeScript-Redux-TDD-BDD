@@ -11,8 +11,8 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-var cucumber = require("cypress-cucumber-preprocessor").default
+var cucumber = require('cypress-cucumber-preprocessor').default
 
 module.exports = (on, config) => {
-  on("file:preprocessor", cucumber())
-};
+  on('file:preprocessor', cucumber())
+}

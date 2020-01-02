@@ -1,38 +1,28 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import renderer from 'react-test-renderer';
 import LoginBtn from './login-btn';
 import { Provider } from 'react-redux';
-import configureMockStore from 'redux-mock-store';
+import configureMockStore, { MockStoreEnhanced } from 'redux-mock-store';
 import { LOGIN_REQUESTED, LOGOUT } from '../../state/types/login';
+import { AnyAction } from 'redux';
 
 describe('LoginBtn', () => {
+    
     describe('Rendering label of the LoginBtn component (either Login or Logout) properly based on props', () => {
 
         let mockStore;
-        let store;
+        let store: MockStoreEnhanced<unknown, {}>;
         beforeEach(() => {
             mockStore = configureMockStore();
 
             store = mockStore({
                 loggedInReducer: {
                     fetching: false,
-                    error: null,
-                    userId: null,
+                    error: undefined,
+                    userId: undefined,
                 },
             });
 
-        });
-
-        it('should render as "Login" btn when given no props.', () => {
-
-            const tree = renderer
-                .create(
-                    <Provider store={store}>
-                        <LoginBtn />
-                    </Provider>,
-                )
-                .toJSON();
-            expect(tree.children).toContain('Login');
         });
 
         it('should render as "Login" btn when explicitly passed "false" prop.', () => {
@@ -45,7 +35,7 @@ describe('LoginBtn', () => {
                 )
                 .toJSON();
 
-            expect(tree.children).toContain('Login');
+            expect(tree?.children).toContain('Login');
         });
 
         it('should render as "Logout" btn when explicitly passed "false" prop.', () => {
@@ -58,23 +48,24 @@ describe('LoginBtn', () => {
                 )
                 .toJSON();
 
-            expect(tree.children).toContain('Logout');
+            expect(tree?.children).toContain('Logout');
         });
     });
 
     describe('dispatches proper action redux actions when clicked.', () => {
 
         let mockStore;
-        let store;
-        let mockDispatch;
+        let store: MockStoreEnhanced<unknown, {}>;
+        let mockDispatch: Dispatch<AnyAction>;
+        
         beforeEach(() => {
             mockStore = configureMockStore();
 
             store = mockStore({
                 loggedInReducer: {
                     fetching: false,
-                    error: null,
-                    userId: null,
+                    error: undefined,
+                    userId: undefined,
                 },
             });
 
@@ -96,9 +87,9 @@ describe('LoginBtn', () => {
                 )
                 .toJSON();
 
-            expect(tree.children).toContain('Logout');
+            expect(tree?.children).toContain('Logout');
 
-            tree.props.onClick();
+            tree?.props.onClick();
 
             const actions = store.getActions();
             expect(actions).toEqual([{ type: LOGOUT }]);
@@ -114,13 +105,14 @@ describe('LoginBtn', () => {
                 )
                 .toJSON();
 
-            expect(tree.children).toContain('Login');
+            expect(tree?.children).toContain('Login');
 
-            tree.props.onClick();
+            tree?.props.onClick();
 
             const actions = store.getActions();
             expect(actions).toEqual([{ type: LOGIN_REQUESTED }]);
         });
 
     });
+    
 });

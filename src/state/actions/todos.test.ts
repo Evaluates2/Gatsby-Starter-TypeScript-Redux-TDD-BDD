@@ -46,6 +46,4 @@ describe('todos actions', () => {
 
     })
 
-
-
 })

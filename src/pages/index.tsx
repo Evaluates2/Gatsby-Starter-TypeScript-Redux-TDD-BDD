@@ -5,8 +5,8 @@ import Layout from '../components/layout';
 import Image from '../components/image';
 import SEO from '../components/seo';
 import Todos from '../components/todos/todos';
-import PropTypes from 'prop-types';
 import LoginSection from '../components/login/login-section';
+import { IState } from '../state/createStore';
 import { ITodo } from '../models/todo';
 
 const imgStyle = { maxWidth: '300px', marginBottom: '1.45rem' };
@@ -17,7 +17,7 @@ const pStyle = {
   margin: '2px',
 };
 
-const IndexPage = ({ todos, userId }: { todos: ITodo, userId: number }) => {
+const IndexPage = ({ todos = [], userId = 0}: { todos: ITodo[] | undefined, userId: number | undefined }) => {
 
   return (
     <Layout>
@@ -41,7 +41,7 @@ const IndexPage = ({ todos, userId }: { todos: ITodo, userId: number }) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: IState) => {
   return {
     todos: state.todosReducer.todos,
     userId: state.loginReducer.userId,

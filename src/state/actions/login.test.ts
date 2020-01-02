@@ -19,11 +19,8 @@ describe('login actions', () => {
       payload: someError
     }
 
-
     expect(loginFailed(someError)).toEqual(expectedResponse)
 
   })
-
-
 
 })

@@ -16,14 +16,14 @@ describe('Todo', () => {
         const renderedTodo = renderer.create(<Todo todo={fakeTodo} />)
             .toJSON();
 
-        renderedTodo.children.forEach(childElement => {
+        renderedTodo?.children?.forEach((childElement: any) => {
 
-            if (childElement.type === 'h1') {
-                expect(childElement.children).toEqual([fakeTodo.title]);
+            if (childElement?.type === 'h1') {
+                expect(childElement?.children).toEqual([fakeTodo.title]);
             }
 
-            if (childElement.type === 'p') {
-                expect(childElement.children).toEqual([fakeTodo.description]);
+            if (childElement?.type === 'p') {
+                expect(childElement?.children).toEqual([fakeTodo.description]);
             }
 
         });

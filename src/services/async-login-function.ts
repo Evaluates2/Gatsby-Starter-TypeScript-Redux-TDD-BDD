@@ -16,5 +16,4 @@ export const asyncLoginFunction = (params: ILoginParams = {}): Promise<ILoginSuc
 
     });
 
-
 }

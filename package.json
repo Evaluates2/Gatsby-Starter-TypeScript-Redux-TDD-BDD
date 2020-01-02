@@ -53,14 +53,15 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "tslint": "tslint \"src/**/*.ts[x]\" --fix",
+    "lint": "npm run format && npm run tslint",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest --watch",
     "test-once": "jest  --coverage",
     "e2e": "node_modules/.bin/cypress open",
-    "e2e-headless": "node_modules/.bin/cypress run",
-    "lint": "tslint \"src/**/*.ts[x]\" --fix"
+    "e2e-headless": "node_modules/.bin/cypress run"
   },
   "repository": {
     "type": "git",

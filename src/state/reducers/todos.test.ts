@@ -10,7 +10,7 @@ describe("todoReducer", () => {
 
     const initialState = {
       fetching: false,
-      error: null,
+      error: undefined,
       todos: [],
     }
 
@@ -20,7 +20,7 @@ describe("todoReducer", () => {
 
     const finalState = todosReducer(initialState, incomingAction)
 
-    expect(finalState).toEqual({ fetching: true, error: null, todos: [] })
+    expect(finalState).toEqual({ fetching: true, error: undefined, todos: [] })
   })
 
   it('should handle a TODOS_SUCCESS action.', () => {
@@ -39,7 +39,7 @@ describe("todoReducer", () => {
 
     const initialState = {
       fetching: false,
-      error: null,
+      error: undefined,
       todos: [],
     }
 
@@ -50,7 +50,7 @@ describe("todoReducer", () => {
 
     const finalState = todosReducer(initialState, incomingAction)
 
-    expect(finalState).toEqual({ fetching: false, error: null, todos: fakeTodoReponse })
+    expect(finalState).toEqual({ fetching: false, error: undefined, todos: fakeTodoReponse })
   })
   it('should handle a TODOS_FAILED action.', () => {
 
@@ -62,7 +62,7 @@ describe("todoReducer", () => {
 
     const initialState = {
       fetching: false,
-      error: null,
+      error: undefined,
       todos: [],
     }
 

@@ -9,21 +9,19 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-
 import Header from './header';
 import './layout.css';
-import { IProduct, Product } from '../models/product';
 import { todosRequested } from '../state/actions/todos';
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: { children: any }) => {
 
   const dispatch = useDispatch();
 
   useEffect(() => {
 
-     //  This is an example of doing things when the app first loads.
-     //  You can dispatch a Redux action here to do some async thing
-     //  when the webapp boots up.
+    //  This is an example of doing things when the app first loads.
+    //  You can dispatch a Redux action here to do some async thing
+    //  when the webapp boots up.
 
     dispatch(todosRequested());
 

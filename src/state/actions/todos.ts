@@ -10,7 +10,6 @@ export const todosSuccess = (todosData: { data: ITodo[] }) => {
     type: TODOS_SUCCESS,
     payload: todosData.data,
   };
-
 };
 
 export const todosFailed = (error: Error) => ({

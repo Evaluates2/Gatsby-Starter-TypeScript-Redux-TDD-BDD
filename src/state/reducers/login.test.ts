@@ -8,8 +8,8 @@ describe("loginReducer", () => {
 
     const initialState = {
       fetching: false,
-      error: null,
-      userId: null,
+      error: undefined,
+      userId: undefined,
     }
 
     const incomingAction = {
@@ -18,15 +18,15 @@ describe("loginReducer", () => {
 
     const finalState = loginReducer(initialState, incomingAction)
 
-    expect(finalState).toEqual({ fetching: true, error: null, userId: null })
+    expect(finalState).toEqual({ fetching: true, error: undefined, userId: undefined })
   })
 
   it('should handle a LOGIN_SUCCESS action.', () => {
 
     const initialState = {
       fetching: true,
-      error: null,
-      userId: null,
+      error: undefined,
+      userId: undefined,
     }
 
     const fakeUserId = 1
@@ -44,15 +44,15 @@ describe("loginReducer", () => {
 
     const finalState = loginReducer(initialState, incomingAction)
 
-    expect(finalState).toEqual({ fetching: false, error: null, userId: fakeUserId })
+    expect(finalState).toEqual({ fetching: false, error: undefined, userId: fakeUserId })
   })
 
   it('should handle a LOGIN_FAILED action.', () => {
 
     const initialState = {
       fetching: false,
-      error: null,
-      userId: null,
+      error: undefined,
+      userId: undefined,
     };
 
     const fakeLoginError = {
@@ -67,7 +67,7 @@ describe("loginReducer", () => {
 
     const finalState = loginReducer(initialState, incomingAction)
 
-    expect(finalState).toEqual({ fetching: false, error: fakeLoginError, userId: null })
+    expect(finalState).toEqual({ fetching: false, error: fakeLoginError, userId: undefined })
 
   })
 
@@ -75,14 +75,14 @@ describe("loginReducer", () => {
 
     const initialState = {
       fetching: false,
-      error: null,
+      error: undefined,
       userId: 2,
     };
 
     const expectedFinalState = { 
       fetching: initialState.fetching, 
       error: initialState.error, 
-      userId: null 
+      userId: undefined 
     };
 
     const incomingAction = {
