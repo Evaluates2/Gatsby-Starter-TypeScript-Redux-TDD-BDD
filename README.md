@@ -20,7 +20,6 @@ An awesome Gatsby starter template that takes care of the tooling setup, allowin
 
 A demo of this starter can be found here: [https://evaluates2.github.io/Gatsby-Starter-TypeScript-Redux-TDD-BDD](https://evaluates2.github.io/Gatsby-Starter-TypeScript-Redux-TDD-BDD)
 
-(hosted via Github Pages).
 
 # Usage
 
