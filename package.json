@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Jim Lynch <jim.lynch@evaluates2.com>",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "tslint": "tslint \"src/**/*.ts[x]\" --fix",
@@ -17,7 +17,8 @@
     "test-once": "jest  --coverage",
     "e2e": "node_modules/.bin/cypress open",
     "e2e-headless": "node_modules/.bin/cypress run",
-    "deploy-gh": "git push origin :gh-pages && git subtree push --prefix public/ origin gh-pages",
+    "deploy-ghold": "git push origin :gh-pages && git subtree push --prefix public/ origin gh-pages",
+    "deploy-gh": "gh-pages -d public",
     "deploy-s3": "gatsby-plugin-s3 deploy --yes"
   },
   "dependencies": {
@@ -50,6 +51,7 @@
     "babel-preset-gatsby": "^0.2.26",
     "cypress": "^3.8.0",
     "cypress-cucumber-preprocessor": "^1.19.0",
+    "gh-pages": "^2.1.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",

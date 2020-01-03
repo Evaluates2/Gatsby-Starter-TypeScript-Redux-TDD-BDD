@@ -16,6 +16,10 @@ An awesome Gatsby starter template project that takes care of the tooling setup,
 - [x] Linting pre-configured with Prettier _AND_ TSLint.
 - [x] Continuous integration & continuous deploy setup with Travis CI.
 
+# Try It Out!
+A demo of this starter can be found [here](https://evaluates2.github.io/Gatsby-Starter-TypeScript-Redux-TDD-BDD/).
+
+
 # Usage
 
 You can scaffold out a fresh new gatsby project use this template with the gatsby `new` command.
