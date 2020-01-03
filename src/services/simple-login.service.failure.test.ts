@@ -1,8 +1,8 @@
 const mockFailureResponse = "Something bad happened!"
 
-/**
- *  Example of mocking a function that was imported into the system under test.
- *  The mock must be declared before importing the SUT file, hence the two test fies.
+/*
+ * Example of mocking a function that was imported into the system under test.
+ * The mock must be declared before importing the SUT file, hence the two test fies.
  */
 jest.mock('./async-login-function', () => {
     return {

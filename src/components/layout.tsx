@@ -1,4 +1,4 @@
-/**
+/*
  * Layout component that queries for data
  * with Gatsby's useStaticQuery component
  *
@@ -19,9 +19,11 @@ const Layout = ({ children }: { children: any }) => {
 
   useEffect(() => {
 
-    //  This is an example of doing things when the app first loads.
-    //  You can dispatch a Redux action here to do some async thing
-    //  when the webapp boots up.
+    /*
+     * This is an example of doing things when the app first loads.
+     * You can dispatch a Redux action here to do some async thing
+     * when the webapp boots up.
+     */
 
     dispatch(todosRequested());
 

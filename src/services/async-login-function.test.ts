@@ -1,4 +1,3 @@
-
 import { asyncLoginFunction } from './async-login-function'
 import { ILoginSuccess } from './simple-login.service'
 

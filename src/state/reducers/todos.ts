@@ -14,13 +14,13 @@ export const initialState = {
 };
 
 interface IAction {
-    type?: string;
-    payload?: any;
+  type?: string;
+  payload?: any;
 }
 
 const reducer = (state = initialState, action: IAction = {}) => {
 
-  const {type, payload} = action;
+  const { type, payload } = action;
 
   switch (type) {
     case TODOS_REQUESTED:

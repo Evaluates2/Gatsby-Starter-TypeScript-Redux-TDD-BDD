@@ -1,13 +1,12 @@
-
 const mockSuccessResponse = {
   data: {
     id: 3,
   },
 }
 
-/**
- *  Example of mocking a module that is "default imported" into the system under test.
- *  Mocking in jest must occur before the SUT file is imported (hence the two test files). 
+/*
+ * Example of mocking a module that is "default imported" into the system under test.
+ * Mocking in jest must occur before the SUT file is imported (hence the two test files). 
  */
 jest.mock('../../services/simple-login.service', () => ({
     __esModule: true,

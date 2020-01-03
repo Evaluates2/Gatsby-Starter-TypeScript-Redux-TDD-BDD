@@ -1,13 +1,12 @@
-
 const mockFailureResponse = {
   err: {
     message: "Ayy, bad things!",
   },
 }
 
-/**
- *  Example of mocking a module that is "default imported" into the system under test.
- *  Mocking in jest must occur before the SUT file is imported (hence the two test files). 
+/*
+ * Example of mocking a module that is "default imported" into the system under test.
+ * Mocking in jest must occur before the SUT file is imported (hence the two test files). 
  */
 jest.mock('../../services/simple-login.service', () => ({
     __esModule: true,
@@ -19,7 +18,7 @@ jest.mock('../../services/simple-login.service', () => ({
 
 import loginCustomMiddleware from './loginCustomMiddleware';
 import { Dispatch } from 'react';
-import { LOGIN_REQUESTED, LOGIN_SUCCESS, LOGIN_FAILED } from '../types/login';
+import { LOGIN_REQUESTED, LOGIN_FAILED } from '../types/login';
 import { AnyAction } from 'redux';
 
 describe('loginCustomMiddleware', () => {

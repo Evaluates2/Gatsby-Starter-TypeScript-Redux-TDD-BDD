@@ -1,8 +1,6 @@
 import todosReducer from './todos';
-import { getEffectiveTypeParameterDeclarations } from 'typescript';
-import todosService from '../../services/todos.service';
 import { TODOS_SUCCESS, TODOS_REQUESTED, TODOS_FAILED } from '../types/todos';
-import { initialState as todosReducerInitialState } from './todos'; 
+import { initialState as todosReducerInitialState } from './todos';
 
 describe("todoReducer", () => {
 
@@ -26,16 +24,16 @@ describe("todoReducer", () => {
   it('should handle a TODOS_SUCCESS action.', () => {
 
     const fakeTodoReponse = [
-    {
+      {
         id: 1,
         title: 'Derp',
         description: 'derp description',
-    },
-    {
+      },
+      {
         id: 2,
         title: 'Derp2',
         description: 'derp2 description',
-    }];
+      }];
 
     const initialState = {
       fetching: false,
@@ -55,10 +53,10 @@ describe("todoReducer", () => {
   it('should handle a TODOS_FAILED action.', () => {
 
     const fakeTodoError = [
-    {
+      {
         code: 500,
         message: 'Whoops!',
-    }];
+      }];
 
     const initialState = {
       fetching: false,

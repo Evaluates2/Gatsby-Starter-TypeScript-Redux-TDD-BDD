@@ -1,12 +1,8 @@
-import { TODOS_REQUESTED } from '../types/todos';
 import loginService, { ILoginSuccess, ILoginError } from '../../services/simple-login.service';
-import { todosSuccess, todosFailed } from '../actions/todos';
 import { LOGIN_REQUESTED } from '../types/login';
 import { loginSuccess, loginFailed } from '../actions/login';
 import { MiddlewareAPI, AnyAction, Action } from 'redux';
-import { ILoginState } from '../reducers/login';
 import { Dispatch } from 'react';
-
 
 export interface MiddlewareTodoParams<S> {
   store: MiddlewareAPI<any>;

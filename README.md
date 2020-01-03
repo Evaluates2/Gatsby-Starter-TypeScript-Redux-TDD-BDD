@@ -17,8 +17,8 @@ An awesome Gatsby starter template project that takes care of the tooling setup,
 - [x] Continuous integration & continuous deploy setup with Travis CI.
 
 # Try It Out!
-A demo of this starter can be found [here](https://evaluates2.github.io/Gatsby-Starter-TypeScript-Redux-TDD-BDD/).
 
+A demo of this starter can be found [here](https://evaluates2.github.io/Gatsby-Starter-TypeScript-Redux-TDD-BDD/).
 
 # Usage
 
@@ -160,15 +160,14 @@ This project does not include any screenshot testing. We believe that once your 
 
 We struggled for a while with trying to figure out how to specify through React `propTypes` that some property was an instance of a TypeScript interface. Then after not finding a good solution and speaking to other engineers, we concluded that we preferred to use functional components that use TypeScript to define the types of the props instead of propTypes. This just overall made things easier, and the React propTypes don't really provide any extra information that can't be conveyed arguably more cleanly with interfaces and so we figured keeping the propTypes would only be an unnecessary duplication and burden for reading and updating these props later.
 
-
 ## Some Reasons Why We Love TypeScript
 
 Here at Evaluates2 we really love TypeScript a lot. We believe that everyone _should want_ to use TypeScript over JavaScript so that the reader of your code later (possibly your future-self!) can see explicitly the types of the object that are being passed around rather than having ONLY the names of the variables being passed around. TypeScript allows your editor to be more helpful, and it allows for easy (ctrl + click-on-the-type) navigation to different files. With this said, moving from JavaScript to TypeScript will not be all unicorns and rainbows. Understanding the literally thousands of TypeScript rules as and what the complaining TypeScript compiler wants from you can be a frustrating promise, but we firmly believe that once you cross that hump of learning and appreciate explicitness and power of TypeScript, you'll never want to go back.
 
-
 ## Removing Parts of This Starter
 
 ### Removing TypeScript
+
 Suppose you want change this project from TypeScript back to JavaScript.
 
 - Change the ts file extensions to js.
@@ -177,6 +176,7 @@ Suppose you want change this project from TypeScript back to JavaScript.
 - Remove typescript-related dependencies in `package.json`.
 
 ### Removing Cypress
+
 Suppose you want remove bdd cypress tests from the project.
 
 - Delete the root level `cypress` folder.
