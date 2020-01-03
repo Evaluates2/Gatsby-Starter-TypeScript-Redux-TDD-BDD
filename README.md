@@ -1,6 +1,6 @@
 <img src="./_Gatsby-Starter-TypeScript-Redux-TDD-BDD-Logo.png">
 
-An awesome Gatsby starter template project that takes care of the tooling setup, allowing you and your team to dive right into building ultra-fast React applications with test-driven _and_ behavior-driven development!
+An awesome Gatsby starter template project that takes care of the tooling setup, allowing you and your team to dive right into building ultra-fast React applications quickly and deploy them with confidence!
 
 [![Build Status](https://api.travis-ci.org/Evaluates2/Gatsby-Starter-TypeScript-Redux-TDD-BDD.svg?branch=master)](https://travis-ci.org/Evaluates2/Gatsby-Starter-TypeScript-Redux-TDD-BDD)
 
