@@ -2,28 +2,36 @@
 
 An awesome Gatsby starter template that takes care of the tooling setup, allowing you and your team to dive right into building ultra-fast React applications quickly and deploy them with confidence!
 
-[![Build Status](https://api.travis-ci.org/Evaluates2/Gatsby-Starter-TypeScript-Redux-TDD-BDD.svg?branch=master)](https://travis-ci.org/Evaluates2/Gatsby-Starter-TypeScript-Redux-TDD-BDD)
+<br/>
 
 # Features
 
-- [x] TypeScript pre-installed and all src files have been converted to TypeScript.
-- [x] Redux preinstalled and with simple examples of actions, reducers, and types, and custom middlewares.
-- [x] Redux-devtools support preinstalled (For usage with Redux Dev Tools Chrome Extension)
-- [x] Redux-localstorage-simple preinstalled (For automatic syncing of specified reducers to local storage)
-- [x] Unit testing with Jest pre-configured and ready to go.
-- [x] End-to-end UI automation testing with Cypress pre-configured.
-- [x] Cucumber plugin preinstalled into Cypress to run gherkin features files and steps definitions for outside-in behavior-driven-development.
-- [x] Linting pre-configured with Prettier _AND_ TSLint.
-- [x] Continuous integration & continuous deploy setup with Travis CI.
+- [x] ⭐️ TypeScript pre-installed and all src files have been converted to TypeScript.
+- [x] 🧠 Redux preinstalled and with simple examples of actions, reducers, and types, and custom middlewares.
+- [x] 🔨 Redux-devtools support preinstalled (For usage with Redux Dev Tools Chrome Extension)
+- [x] 💿 Redux-localstorage-simple preinstalled (For automatic syncing of specified reducers to local storage)
+- [x] 🧪 Unit testing with Jest pre-configured and ready to go.
+- [x] 📊 Convenient code coverage script for checking areas that may be missing unit tests.  
+- [x] 👽 Mutation testing with Stryker to find opportunities for tightening up unit tests.
+- [x] 🤖 End-to-end UI automation testing with Cypress pre-configured.
+- [x] 🥒 Cucumber plugin preinstalled into Cypress to run gherkin features files and steps definitions for outside-in behavior-driven-development.
+- [x] 🪶 Linting pre-configured with Prettier _AND_ TSLint.
+- [x] 🚀 Continuous integration & continuous deploy setup with Travis CI.
+
+<br/>
 
 # Try It Out!
 
 A demo of this starter can be found here: [https://evaluates2.github.io/Gatsby-Starter-TypeScript-Redux-TDD-BDD](https://evaluates2.github.io/Gatsby-Starter-TypeScript-Redux-TDD-BDD)
 
+<br/>
+
 # It's Official!
 You can find this Gatsby starter in the starters library here: https://www.gatsbyjs.org/starters/Evaluates2/Gatsby-Starter-TypeScript-Redux-TDD-BDD/
 
 _We appreciate all the stars we can get!_ 🙏 
+
+<br/>
 
 # Usage
 
@@ -31,83 +39,90 @@ You can scaffold out a fresh new gatsby project use this template with the gatsb
 
 This will create, in the current directory, a new folder named `my-cool-react-project` containing a fresh scaffold of this starter.
 
-```
+```bash
 gatsby new my-cool-react-project https://github.com/Evaluates2/Gatsby-Starter-TypeScript-Redux-TDD-BDD
 ```
 
 Then navigate into your snazzy new project, and you're ready to go!
 
-```
+```bash
 cd my-cool-react-project
 ```
 
 _note: installing gatsby globally, `npm i -g gatsby`, will probably make development easier, but you could also use `npx gatsby` if you didn't want to._
 
-This project uses relatively new libraries so any node version below v11 will probably just result in build issues. We recommend v11.15.0, and if you have [nvm](https://github.com/nvm-sh/nvm) installed you can switch to this version like so:
-
-```
+This project uses relatively new libraries so any node version below v11 will probably just result in build issues. We originally built this with node v11.15.0, and if you have [nvm](https://github.com/nvm-sh/nvm) installed you can switch to this version like so:
+```bash
 nvm use
 ```
 
+_Note: you probably want to deploy to production using a newer version of node..._
+
 Install dependencies:
-
+```bash
+yarn install
 ```
-npm i
-```
 
-Run locally (with hot module reloading)
-
-```
-npm run deploy
+Run locally (with hot module reloading 👍)
+```bash
+yarn start
 ```
 
 Create local build
-
-```
-npm run build
+```bash
+yarn build
 ```
 
 Serve local build
-
-```
-npm run serve
-```
-
-Run Unit Tests (TDD watch-mode style)
-
-```
-npm test
+```bash
+yarn serve
 ```
 
-Run Unit Tests (Single run for CI and with code coverage output)
-
-```
-npm run test-once
-```
-
-Run BDD / E2e Tests (Locally With UI)
-
-```
-npm run e2e
+Run Unit Tests (TDD watch-mode style 🏃)
+```bash
+yarn test
 ```
 
-Run BDD / E2e Tests (Headless Mode for CI):
-
+Run Unit Tests (Single run for CI or to view code coverage output)
+```bash
+yarn test-once
 ```
+
+#### Run Stryker Mutation Tests
+```bash 
+yarn stryker
+```
+
+#### Run muation tests
+```bash
+yarn mut
+```
+
+#### Run BDD / E2e Tests
+Runs ui tests locally with your browser
+_Note: start the app in a different shell before running e2e tests locally_
+```bash
+yarn e2e
+```
+
+#### Run BDD / E2e Tests
+headless mode, useful for running on CI
+```bash
 node_modules/.bin/cypress run
 ```
 
-Run linting (calls both prettier linting and tslint)
-
-```
+#### Run linting 
+calls both prettier linting and tslint
+```bash
 npm run lint
 ```
 
-Deploy
-
-```
+#### Deploy
+```bash
 npx gatsby deploy
 ```
+
+<br/>
 
 ## Developing With A Test-First Mindset
 
@@ -137,39 +152,67 @@ It's a great feeling when you have solid unit test coverage and a working new fe
 
 Assuming the external systems your application is interacting with are working properly, environment variables are set correctly, etc. then your feature should be deployed automatically by the continuous integration server automatically (be sure to replace the line in .travis.yml that says, "do your deploy commands here!" with the code for deploying to your hosting provider). Ensure the linting passes cleanly and then push up the commit!
 
+<br/>
+
 ## What To Do If Bugs Are Found!
 
 First of all, don't panic. If someone finds a bug, the first step to describing it to others is to just give steps for recreating the bug. In the end, say what actually happened, and the user should expect to happen. Notice how we said "should expect" there, and indeed it shouldn't be too difficult to turn these _user stories_ describing the correct behavior into one or more Scenarios that would live in a feature file.
+
+<br/>
 
 ## Unit Tests & End-To-End Tests: The Ying & Yang of Automated Testing
 
 It's very important to have BOTH the end-to-end UI tests and the unit tests because they really provide different purposes and really pick up for the weaknesses of the other. A suite of passing end-to-end tests that thoroughly and correctly test your entire system can give you a high level of confidence that that system should be working properly. However, when the cypress tests break they don't always give you a great deal of insight into _why_ the bug is happening and what in the code needs to be changed in order to fix it! Unit tests are in a way the reverse. Since unit tests are very focused and specific, a failure should give you exact line numbers in the code and show exactly the output in the code that was expected vs what was returned. As great essential as unit tests are for deploying with confidence, it seems that we can never _truly_ believe front-end applications are working properly, as a whole and from a user-perspective with just passing unit tests alone.
 
+<br/>
+
 ## Cypress Is Great For UI Testing
 
 There are many UI automation libraries, and while I'm not going to throw out any names of clunky or frustrating to use ones, our team has really found working with Cypress, for the most part (and after some initial growing pains) to be a joy. The excellent auto-rerunning UI development environment, great API that is promise-based but is abstract enough to where things just work properly and consistently. For browser development in particular, we definitely have found Cypress to be excellent! Another thing we like about Cypress is that it is completely agnostic to the front-end framework you use, yet it works with React extremely well!
+
+<br/>
 
 ## Spot Missing Unit Tests With A Code Coverage Report
 
 Unit tests test _functions_, and it's not always straightforward to look at your functions, then look at your unit tests, and really be sure that your tests are running the function through all the possible different types of situations that may occur. The phrase "different types of situations" is purposely vague, and it alludes to the fact that it's tricky to have enough tests without having extra, unnecessary ones. One excellent tool to take advantage of here is the code coverage report. After running the `test-once` npm command a folder named "coverage" will be generated containing a clean little interactive website, courtesy of the instanbul library, in which you can view coverage and drill down into the folders and individual files. The file `coverage/lcov-report/index.html` can be opened locally in a browser to view the report more interactively than by inspecting the coverage output in the command shell. The code coverage algorithm is quite interesting, and although the details are out of the scope of this doc, the code coverage report checks that invoking your test code reaches all of the statements, branches, functions, and lines of the given function under test. Theoretically, any line of code, statement, or branch of logic that is uncovered could have a bug in it (and it can be a fun side-game to say to your pairing partner, "look, I can purposely put this bug in here breaking our app yet our tests still pass!"). A wise software engineer and philosopher once said, "you only test the things you want to work" which is really a cheeky way of saying we should test everything since we want everything to work! Seeing what lines are red on a code coverage report is a great indication of what still needs one of more tests. Then think to yourself, "Is there a unit test I can write for this function such that the thread of execution reaches this line when they all run together?". Normally, if not always, the answer is yes, and often it will spark an idea for a test. Sometimes it the engineer may realize that the line of code or branch of logic is actually completely unnecessary and that line can be removed altogether or the source code refactored to be cleaner and only what's necessary. Philosophically, everything should be unit tested, but in practice sometimes the code is just pure, logicless data or a library usage so abstracted that it's unclear what to even test. Although there do exist projects with full 100% code coverage, the tests serve merely to either give you confidence that the application works or to give you insight into what's not right, and it is [Working software](https://agilemanifesto.org/) that we are ultimately striving for, not simply a beautifully green code coverage report. The term "chasing hunnits" refers to the act of getting lost in the joy of snugly wrapping your functions to the brim with unit tests.
 
+<br/>
+
 ## A Word On Chasing Hunnits
 
 Once you get familiar with unit testing you want to test everything, and sometimes you may feel the need to test everything just for the sake of testing everything. Sure, it's nice to look at fully green unit test code coverage reports (such as the one from Titanium Lambda), but in reality testing unit testing isn't always easy, it takes some time for you to sit down and really think about what's going on and ensure you are testing the right things (which is why having a pair partner there keeping you honest is so great). For example, in this project we chose not to write unit tests for the configuration files from `gatsby-default-starter` such as `seo.tsx` or `404.tsx`.
+
+<br/>
+
+## Mutation Testing
+Mutation testing is a way to test your tests! (more specifically, to test your _unit tests)._ Mutation testing tools go through each line of your source and temporarily change (ie. mutate) the line of code in some way. Then a new build is created and the the unit tests are run against each of these “mutant codebases”.
+
+We developers can then view the mutation testing output to become aware of these mutant cases where all tests pass, and this pinpoints for us exact places in the code that we can add missing assertions for in our tests! 💡 👽
+
+<br/>
 
 ## Screenshot Testing
 
 This project does not include any screenshot testing. We believe that once your project is in a really solid state where the UI is pretty set, then some screenshot testing framework such as [percy.io](https://percy.io/) can be extremely useful in ensuring there are no regressions in the CSS, layout, or other visual elements that are not particularly well suited for testing with Cypress. We encourage you to experiment with whatever other types of automated testing you may find useful, but we would advise not to forgo the base unit testing & cypress + cucumber testing we recommend here!
 
+<br/>
+
 ## Replacing PropTypes with TypeScript Interfaces
 
 We struggled for a while with trying to figure out how to specify through React `propTypes` that some property was an instance of a TypeScript interface. Then after not finding a good solution and speaking to other engineers, we concluded that we preferred to use functional components that use TypeScript to define the types of the props instead of propTypes. This just overall made things easier, and the React propTypes don't really provide any extra information that can't be conveyed arguably more cleanly with interfaces and so we figured keeping the propTypes would only be an unnecessary duplication and burden for reading and updating these props later.
+
+<br/>
 
 ## Some Reasons Why We Love TypeScript
 
 Here at Evaluates2 we really love TypeScript a lot. We believe that everyone _should want_ to use TypeScript over JavaScript so that the reader of your code later (possibly your future-self!) can see explicitly the types of the object that are being passed around rather than having ONLY the names of the variables being passed around. TypeScript allows your editor to be more helpful, and it allows for easy (ctrl + click-on-the-type) navigation to different files. With this said, moving from JavaScript to TypeScript will not be all unicorns and rainbows. Understanding the literally thousands of TypeScript rules as and what the complaining TypeScript compiler wants from you can be a frustrating promise, but we firmly believe that once you cross that hump of learning and appreciate explicitness and power of TypeScript, you'll never want to go back.
 
+<br/>
+
 ## Removing Parts of This Starter
+The following sections will go into how to _remove_ pre-installed packages that you don't particularly care for.
+
+<br/>
 
 ### Removing TypeScript
 
@@ -180,12 +223,16 @@ Suppose you want change this project from TypeScript back to JavaScript.
 - Add React propTypes.
 - Remove typescript-related dependencies in `package.json`.
 
+<br/>
+
 ### Removing Cypress
 
 Suppose you want remove bdd cypress tests from the project.
 
 - Delete the root level `cypress` folder.
 - Remove the dpendencies `cypress` and `cypress-cucumber-preprocessor` in `package.json`.
+
+<br/>
 
 ## Deployment Guides
 
@@ -206,17 +253,25 @@ Amazon Web Services (AWS) is often seen as the largest and most mature cloud pro
 
 The Gatsby documentation provides a list of some great guides on deploying to various hosting platforms. Your Gatsby site should look and work excellently on any hosting platform, and with everything automated through CI you shouldn't really be spending much time thinking about the hosting implementation details anyway. In the end, you should just use whatever platform is most familiar to your team. If you aren't familiar with anything that Github Pages, AWS, and the recommended platforms in the Gatsby guides are _all_ safe bets.
 
+<br/>
+
 ## Meta: It's Not Just About Building Fast Websites, It's About Building _Any Software._
 
 Running a suite of unit tests, a suite of end-to-end tests (preferably specified in Gherkin), and a linting/code formatting tool before pushing your code works before committing your code is the _only_ realistic way to know your code is working and pristine, each and every time you commit your code. Running these tests often locally and on CI servers, and having a solid understanding of using version control such as git are among the good habits will undoubtedly allow you to build software more quickly that has fewer bugs, and the process will give your team _much_ fewer headaches than if you choose to work without them. Your true seniority as a developer is about how mature you are your code are- _it should not matter how long you have been at a company or even how many years of experience you have._ If you have a deep appreciation for building software with these three things: unit tests, e2e tests, and a linter- and you want to be treated like you are at the highest level of software engineer then you should immediately [apply at Evaluates2](https://evaluates2.com/careers/) because we will recognize that here (and long as you have a few side projects to back it up, hehe).
+
+<br/>
 
 ## Be Humble
 
 It is unfortunate that experience, success, and wisdom is many times correlated with arrogance, pretentiousness, and cockiness. Don't be that person. Be the one who shares all of his or her wisdom honestly, who gives lavish praise for appreciated things, and who makes choices in a fair and just manner. Try to only ever criticize the code itself, not the author. Remember that _mentoring_ is not top-down; a person at any level can learn something valuable from a person at any other level. Stay curious, and never stop learning. Be open-minded and always watchfully on the lookout for a better way.
 
+<br/>
+
 ## Disclaimer
 
 This project comes with the MIT open source license which means go and ahead and use it for your own commercial projects, but we ain't responsible for any possible bugs. ;)
+
+<br/>
 
 ## Contributing To This Project
 
@@ -232,6 +287,8 @@ We love feedback! Feel free to open issues or pull requests if you have any ques
 
 - **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
+<br/>
+
 ## Learning More About Gatsby
 
 Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
@@ -240,61 +297,67 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
+<br/>
+
 # From Scratch Setup Guide
 
 If you are interested in learning how this project was created or would like to be your own modified starter, we have documented our steps as of the creating of this project below.
 
 This project was initially created with the [gatsby-starter-default](https://github.com/gatsbyjs/gatsby-starter-default) project.
 
-```
+```bash
 gatsby new myproject https://github.com/gatsbyjs/gatsby-starter-default
 ```
+
+<br/>
 
 ## Adding TypeScript From Scratch
 
 Then type
 
-```
+```bash
 npm install gatsby-plugin-typescript
 ```
 
 Included this in gatsby-config.js:
 
-```
+```javascript
 module.exports = {
- // ...,
- plugins: [`gatsby-plugin-typescript`],
+  // ...,
+  plugins: [`gatsby-plugin-typescript`],
 }
 ```
 
 Then we basically just changed all the js files to tsx files and had to install these type defs for React Helmet:
 
-```
+```bash
 npm i @types/react-helmet
 ```
+
+<br/>
 
 ## Adding BDD Tests From Scratch
 
 First, install cypress and the cypress-cucumber plugin:
 
-```
+```bash
 npm install cypress --save-dev
 npm i cypress-cucumber-preprocessor --save-dev
 ```
 
 Cypress will scaffold out a bunch of files when you run "open" for the first time:
 
-```
+```bash
 node_modules/.bin/cypress open
 ```
 
 Then replace cypress/plugins/index.js with this:
 
-```
+```javascript
 var cucumber = require("cypress-cucumber-preprocessor").default
 
 module.exports = (on, config) => {
- on("file:preprocessor", cucumber())
+  on("file:preprocessor", cucumber())
 };
 ```
 
@@ -310,109 +373,115 @@ To run in headless mode: `npm run cypress:run`
 
 Note, you can also ignore everything but the feature files by adding the option in cypress.json
 
+<br/>
+
 ## Adding Redux
 
 First, install the npm libraries for `gatsby-plugin-react-redux`, `react-redux`, and `redux`:
 
-```
+```bash
 npm install --save gatsby-plugin-react-redux react-redux redux
 ```
 
 Created a `./src/store/createStore.ts` file containing this:
-
-```
+```typescript
 import { createStore } from 'redux';
 
 function reducer() {
- //...
+  //...
 }
 
 // preloadedState will be passed in by the plugin
 export default preloadedState => {
- return createStore(reducer, preloadedState);
+  return createStore(reducer, preloadedState);
 };
 ```
 
 And added this plugin to the list in `./gatsby-config.js`:
 
-```
+```javascript
 module.exports = {
- plugins: [
- {
- resolve: `gatsby-plugin-react-redux`,
- options: {
- // [required] - path to your createStore module
- pathToCreateStoreModule: './src/state/createStore',
- // [optional] - options passed to `serialize-javascript`
- // info: https://github.com/yahoo/serialize-javascript#options
- // will be merged with these defaults:
- serialize: {
- space: 0,
- isJSON: true,
- unsafe: false,
- },
- },
- },
- ],
+  plugins: [
+  {
+    resolve: `gatsby-plugin-react-redux`,
+    options: {
+      // [required] - path to your createStore module
+      pathToCreateStoreModule: './src/state/createStore',
+      // [optional] - options passed to `serialize-javascript`
+      // info: https://github.com/yahoo/serialize-javascript#options
+      // will be merged with these defaults:
+      serialize: {
+        space: 0,
+        isJSON: true,
+        unsafe: false,
+      },
+    },
+  },
+],
 };
 ```
+
+<br/>
 
 ## Redux Dev Tools Setup
 
 First, install:
 
-```
+```bash
 npm install --save redux-devtools-extension
 ```
 
 and use `composeWithDevTools` when creating your store:
 
-```
+```javascript
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(reducer, composeWithDevTools(
- applyMiddleware(...middleware),
- // other store enhancers if any
+  applyMiddleware(...middleware),
+  // other store enhancers if any
 ));
 ```
+
+<br/>
 
 ## Redux Local Storage Setup
 
 First, install:
 
-```
+```bash
 npm i --save-dev redux-localstorage-simple
 ```
 
 Then change your createStore function to use _both_ gatsby's preloaded state and the slices of state you'd like to be automatically synced with localstorage:
 
-```
+```javascript
 export default preloadedState => {
- return createStore(
- combinedReducers,
- getLoadedState(preloadedState),
- composeWithDevTools(
- applyMiddleware(
- save({ states: ['loginReducer'] }),
- someCustomMiddleware(),
- )
- ),
-
- );
+  return createStore(
+    combinedReducers,
+    getLoadedState(preloadedState),
+    composeWithDevTools(
+      applyMiddleware(
+        save({ states: ['loginReducer'] }),
+        someCustomMiddleware(),
+      )
+    ),
+  );
 };
 
 const getLoadedState = (preloadedState) => {
- if (typeof window !== 'undefined')
- return {
- ...preloadedState,
- ...load({ states: ['loginReducer'], disableWarnings: true }),
- }
- return {
- ...preloadedState,
- }
+  if (typeof window !== 'undefined')
+  return {
+    ...preloadedState,
+    ...load({ states: ['loginReducer'], disableWarnings: true }),
+  }
+  return {
+    ...preloadedState,
+  }
 }
 ```
+
+<br/>
 
 ## Custom Middleware Setup
 
@@ -420,67 +489,89 @@ After developing React applications for a while, most engineers will agree that 
 
 Custom middlewares can be added to a project relatively easily by adding it as an argument of "applyMiddleware" in your `createStore` function. Here's an example of how we can add "todosCustomMiddleware" and "loginCustomMiddleware" so that they can intercept and dispatch Redux actions to your application's Redux store.
 
+```typescript
+return createStore(
+  combinedReducers,
+  getLoadedState(preloadedState),
+  composeWithDevTools(
+    applyMiddleware(
+      save({ states: ['loginReducer'] }),
+      todosCustomMiddleware(),
+      loginCustomMiddleware()
+    )
+  ),
+);
 ```
- return createStore(
- combinedReducers,
- getLoadedState(preloadedState),
- composeWithDevTools(
- applyMiddleware(
- save({ states: ['loginReducer'] }),
- todosCustomMiddleware(),
- loginCustomMiddleware()
- )
- ),
 
- );
-```
+<br/>
 
 ## Jest Configuration
 
 Configuring jest correctly with typescript was a bit of a struggle. One gotcha for us was that using the package.json "jest" option caused unexpected issues... Instead, we set the configuration via a `jest.config.js` file:
 
-```
+```javascript
 module.exports = {
-
- transform: {
- "^.+\\.[jt]sx?$": "<rootDir>/jest-preprocess.js",
- },
- moduleNameMapper: {
- ".+\\.(css|styl|less|sass|scss)$": `identity-obj-proxy`,
- ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": `<rootDir>/__mocks__/file-mock.js`,
- },
- testPathIgnorePatterns: [`node_modules`, `.cache`, `public`],
- transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
- globals: {
- __PATH_PREFIX__: ``,
- },
- testURL: `http://localhost`,
- setupFiles: [`<rootDir>/loadershim.js`],
- collectCoverageFrom: [
- "**/*.{ts,tsx}",
- "!**/node_modules/**"
- ],
- collectCoverage: true,
- coverageDirectory: 'coverage',
- preset: "ts-jest",
- moduleFileExtensions: [
- "js",
- "jsx",
- "ts",
- "tsx"
- ]
+  transform: {
+    "^.+\\.[jt]sx?$": "<rootDir>/jest-preprocess.js",
+  },
+  moduleNameMapper: {
+    ".+\\.(css|styl|less|sass|scss)$": `identity-obj-proxy`,
+    ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": `<rootDir>/__mocks__/file-mock.js`,
+  },
+  testPathIgnorePatterns: [`node_modules`, `.cache`, `public`],
+  transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
+  globals: {
+    __PATH_PREFIX__: ``,
+  },
+  testURL: `http://localhost`,
+  setupFiles: [`<rootDir>/loadershim.js`],
+  collectCoverageFrom: [
+    "**/*.{ts,tsx}",
+    "!**/node_modules/**"
+  ],
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  preset: "ts-jest",
+  moduleFileExtensions: [
+    "js",
+    "jsx",
+    "ts",
+    "tsx"
+  ]
 }
 ```
 
 and a `jest.preprocess.js` file:
 
-```
+```javascript
 const babelOptions = {
- presets: ["babel-preset-gatsby", "@babel/preset-typescript"],
+  presets: ["babel-preset-gatsby", "@babel/preset-typescript"],
 }
 
 module.exports = require("babel-jest").createTransformer(babelOptions)
 ```
+
+<br/>
+
+## Mutation Testing With Stryker Setup
+Setting up mutation testing in an npm based project is relatively straightforward. First, install the stryker and stryker-api packages:
+```bash
+npm i -D stryker stryker-api
+```
+
+Then create a config file in the root of your project. The `mutate` field should be a file glob that points your your source code files. Below is an example styker config file. 
+
+stryker.conf.js
+```javascript
+module.exports = () => {
+    return {
+        mutate: ['./src/*.ts'],
+        coverageAnalysis: 'off'
+    }
+};
+```
+
+<br/>
 
 ## Adding Travis CI
 
